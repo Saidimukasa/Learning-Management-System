@@ -1,75 +1,67 @@
 from django.db import models
-
-from django.contrib.auth.models import (
-    BaseUserManager, AbstractBaseUser
-)
-
+from django.core.exceptions import ValidationError
+from django.contrib.auth.models import  AbstractBaseUser, BaseUserManager
+from .validators import validate_username
+from django.utils.timezone import now
 
 class AccountManager(BaseUserManager):
-    def create_user(self, email, is_student=False,is_teacher=False,is_suspended=False,is_firstLogin=True,password=None):
+    def create_user(self, email, password=None):
         if not email:
-            raise ValueError('Users must have an email address')
-
+            raise ValueError('Email must be provided')
         user = self.model(
-            email=self.normalize_email(email),
-            is_student=is_student,
-            is_teacher=is_teacher,
-            is_suspended=is_suspended,
-            is_firstLogin=is_firstLogin,
-        )
+        email = self.normalize_email(email),
+        )  
         user.set_password(password)
-        user.save(using=self._db)
+        user.save(using= self._db)
         return user
 
-    def create_superuser(self, email, password=None):
 
+    def create_staffuser(self, email, password):
         user = self.create_user(
-            email,
-            password=password
+            email =email,
+            password = password.password,
+
         )
-        user.is_firstLogin = False
-        user.is_admin = True
-        user.save(using=self._db)
+        user.is_staff = True
+        user.save(using = self._db  )
         return user
 
+    def create_superuser(self, email, password):
+        user = self.create_user(
+            email = email,
+            password = password,
+           
+        )
+        user.is_staff = True
+        user.is_admin = True
+        user.save(using = self._db)
+        return user
 
 class Account(AbstractBaseUser):
-    email = models.EmailField(
-        verbose_name='email address',
-        max_length=255,
-        unique=True,
-    )
-    is_student = models.BooleanField(default=False)
-    is_teacher = models.BooleanField(default=False)
-    is_suspended = models.BooleanField(default=False)
-    is_firstLogin = models.BooleanField(default=True)
-    is_manager = models.BooleanField(default=False)
-    is_admin = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
-
-    objects = AccountManager()
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    email           =models.EmailField(max_length=255, unique=True, verbose_name='Email')
+    is_manager =    models.BooleanField(default=False, verbose_name='Manager')
+    is_teacher =    models.BooleanField(default=False,verbose_name= 'Teacher')
+    is_student =    models.BooleanField(default=False, verbose_name='Student')
+    is_suspended =  models.BooleanField(default=False, verbose_name='Suspended')
+    is_active =     models.BooleanField(default=True, verbose_name='Active')
+    is_staff =      models.BooleanField(default=False, verbose_name='Staff')
+    is_admin =      models.BooleanField(default=False, verbose_name='Admin')
+    date_joined     = models.DateTimeField(verbose_name='Date Joined',auto_now_add= True)
+    last_login      = models.DateTimeField(verbose_name='Last Active', auto_now=True)
+        
+    class Meta:
+        db_table = 'Account'
 
     def __str__(self):
         return self.email
+    
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
-    def issuspended(self):
-        return self.is_suspended
+    objects = AccountManager()
 
-    def has_perm(self, perm, obj=None):
-        "Does the user have a specific permission?"
-        # Simplest possible answer: Yes, always
+    def has_perm(self, perm, object=None):
         return True
 
     def has_module_perms(self, app_label):
-        "Does the user have permissions to view the app `app_label`?"
-        # Simplest possible answer: Yes, always
         return True
-
-    @property
-    def is_staff(self):
-        "Is the user a member of staff?"
-        # Simplest possible answer: All admins are staff
-        return self.is_admin

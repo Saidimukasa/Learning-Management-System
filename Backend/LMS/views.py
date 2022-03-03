@@ -13,24 +13,22 @@ def signin(request):
     if request.method == 'GET':
         return render(request, 'login.html')
     else:
-        u = request.POST.get('email')
-        p = request.POST.get('password')
-        user = authenticate(username=u, password=p)
+        email_ = request.POST.get("email")
+        password_ = request.POST.get("password")
+        user = authenticate(email = email_, password = password_)
         if user is not None:
             login(request, user)
             if request.user.is_manager:
-                return redirect(reverse_lazy('manager_dashboard'))
+                return redirect('manager_dashboard')
             elif request.user.is_teacher:
-                return redirect(reverse_lazy('teacher_dashboard'))
+                return redirect('teacher_dashboard')
             elif request.user.is_student:
-                return redirect(reverse_lazy('student_dashbaord'))
+                return redirect('student_dashboard')
             else:
-                pass
+                messages.error(request, 'There was some problem. Please log in again')
+                return redirect('signin')
         else:
-            print(u)
-            print(p)
-            messages.add_message(request, messages.ERROR,
-                                 'login credential does not match')
+            messages.error(request, 'Username or password is incorrect')
             return redirect('signin')
 
 
