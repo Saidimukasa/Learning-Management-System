@@ -1,0 +1,1036 @@
+﻿{% extends 'includes/student_base.html' %} {% load static %} {% block content %}
+<section class="content">
+    <div class="body_scroll">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Tabs</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Components</a></li>
+                        <li class="breadcrumb-item active">Tabs</li>
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <!-- Example Tab -->
+            <div class="row clearfix">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Available </strong> Education Curriculums</h2>
+
+                        </div>
+                        <div class="body">
+                            <p>You can register subjects based on a curriculum or the subjects you need.</p>
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs p-0 mb-3 nav-tabs-success">
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#home">8-4-4 CURRICULUM</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#profile">CURRICULUM 2</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#messages">CURRICULUM 3</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane in active" id="home">
+                                    <b>8-4-4 Curriculum</b>
+                                    <p> The 8-4-4 system was launched in January 1985, and was, and still is, designed to provide eight years of primary education, four years of secondary, and four years of university education. Emphasis was placed on Mathematics,
+                                        English, and vocational subjects.
+                                    </p>
+                                    <br>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="card">
+                                            <div class="header">
+                                                <h2><strong>SUBJECTS TAUGHT</strong> HERE</h2>
+
+                                            </div>
+                                            <div class="body">
+                                                <br>
+                                                <div class="panel-group full-body" id="accordion_13" role="tablist" aria-multiselectable="true">
+                                                    <div class="panel l-coral">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#collapseOne_13" aria-expanded="true" aria-controls="collapseOne_13"> Early ChildHood Education </a></h4>
+
+                                                        </div>
+                                                        <div id="collapseOne_13" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-amber">
+                                                        <div class="panel-heading" role="tab" id="headingTwo_13">
+                                                            <h4 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_13" href="#class_one" aria-expanded="false" aria-controls="collapseTwo_13"> Class One </a> </h4>
+                                                        </div>
+                                                        <div id="class_one" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-purple">
+                                                        <div class="panel-heading" role="tab" id="headingThree_13">
+                                                            <h4 class="panel-title"> <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_13" href="#class_two" aria-expanded="false" aria-controls="collapseThree_13"> Class Two </a> </h4>
+                                                        </div>
+                                                        <div id="class_two" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-green">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#class_three" aria-expanded="true" aria-controls="collapseOne_13"> Class Three </a> </h4>
+                                                        </div>
+                                                        <div id="class_three" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-blue">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#class_four" aria-expanded="true" aria-controls="collapseOne_13"> Class Four</a> </h4>
+                                                        </div>
+                                                        <div id="class_four" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-coral">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#class_five" aria-expanded="true" aria-controls="collapseOne_13"> Class Five </a> </h4>
+                                                        </div>
+                                                        <div id="class_five" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-pink">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#class_six" aria-expanded="true" aria-controls="collapseOne_13"> Class Six </a> </h4>
+                                                        </div>
+                                                        <div id="class_six" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-green">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#class_seven" aria-expanded="true" aria-controls="collapseOne_13"> Class Seven </a> </h4>
+                                                        </div>
+                                                        <div id="class_seven" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-amber">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#class_eight" aria-expanded="true" aria-controls="collapseOne_13"> Class Eight </a> </h4>
+                                                        </div>
+                                                        <div id="class_eight" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-grey">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#form_one" aria-expanded="true" aria-controls="collapseOne_13"> Form One </a> </h4>
+                                                        </div>
+                                                        <div id="form_one" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-pink">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#form_two" aria-expanded="true" aria-controls="collapseOne_13"> Form Two </a> </h4>
+                                                        </div>
+                                                        <div id="form_two" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-brown">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#form_three" aria-expanded="true" aria-controls="collapseOne_13"> Form Three </a> </h4>
+                                                        </div>
+                                                        <div id="form_three" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel l-blue">
+                                                        <div class="panel-heading" role="tab" id="headingOne_13">
+                                                            <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion_13" href="#form_four" aria-expanded="true" aria-controls="collapseOne_13"> Form Four </a> </h4>
+                                                        </div>
+                                                        <div id="form_four" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne_13">
+                                                            <div class="panel-body">
+                                                                <div class="col-12">
+                                                                    <div class="card">
+
+                                                                        <div class="body">
+                                                                            <div class="table-responsive">
+                                                                                <table class="table m-b-0">
+                                                                                    <thead class="thead-dark">
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Subject</th>
+                                                                                            <th scope="col">Select</th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>English</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">2</th>
+                                                                                            <td>Kiswahili</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mathematics</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Science</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject six</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">5</th>
+                                                                                            <td>Subject seven</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th scope="row">6</th>
+                                                                                            <td>Subject eight</td>
+                                                                                            <td><input type="checkbox" name="" id=""></td>
+
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-success">REGISTER SELECTED SUBJECTS</button>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="profile">
+                                    <b>Curriculum 2</b>
+                                    <p> The 8-4-4 system was launched in January 1985, and was, and still is, designed to provide eight years of primary education, four years of secondary, and four years of university education. Emphasis was placed on Mathematics,
+                                        English, and vocational subjects.
+                                    </p>
+                                    <br>
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="messages">
+                                    <b>Curriculum 3</b>
+                                    <p> The 8-4-4 system was launched in January 1985, and was, and still is, designed to provide eight years of primary education, four years of secondary, and four years of university education. Emphasis was placed on Mathematics,
+                                        English, and vocational subjects.
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

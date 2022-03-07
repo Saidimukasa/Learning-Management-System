@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {% load active_link_tags %}
 <!doctype html>
 <html class="no-js " lang="en">
 
@@ -278,64 +278,60 @@
                         </div>
                     </div>
                 </li>
-                <li class="active open"><a href="{% url 'student_dashboard' %}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
-                <li>
-                    <a href="{% url 'student_profile' %}" class=""><i class="zmdi zmdi-account"></i><span>  Profile</span></a>
-                </li>
-                <li>
-                    <a href="chat.html" class="menu-toggle"><i class="zmdi zmdi-comments"></i><span>Chat Room</span></a>
-                </li>
-                <li>
-                    <a href="mail-inbox.html" class="menu-toggle"><i class="zmdi zmdi-email"></i><span> Email</span></a>
-                </li>
-                <li>
-                    <a href="events.html" class="menu-toggle"><i class="zmdi zmdi-calendar"></i><span>Calender</span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-folder"></i><span>Resources</span></a>
-                    <ul class="ml-menu">
-                        <li><a href="file-dashboard.html">All File</a></li>
-                        <li><a href="file-documents.html">Documents</a></li>
-                        <li><a href="file-images.html">Images</a></li>
-                        <li><a href="file-media.html">Media</a></li>
-                    </ul>
+                <li class="{% active_link 'student_dashboard' 'active open' strict=True %} ">
+                    <a href="{% url 'student_dashboard' %} "><i class="zmdi zmdi-home "></i><span>Dashboard</span></a>
                 </li>
 
-                <li> <a href="choose-curriculum.html" class="menu-toggle"><i class="zmdi zmdi-file"></i><span>Course Registration</span></a>
-
+                <li class="{% active_link 'student_profile' 'active open' strict=True %} ">
+                    <a href="{% url 'student_profile' %}"><i class="zmdi zmdi-account "></i><span>  Profile</span></a>
                 </li>
 
-                <li> <a href="registered-subjects.html" class="menu-toggle"><i class="zmdi zmdi-folder-star"></i><span>Registered Subjects</span></a>
-
-                </li>
-                <li> <a href="time-table.html" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Time Table</span></a>
-
-                </li>
-                <li> <a href="grade-book.html" class="menu-toggle"><i class="zmdi zmdi-collection-plus"></i><span>Grade Book</span></a>
-
+                <li class="{% active_link 'student_chat' 'active open' strict=True %} ">
+                    <a href="{% url 'student_chat' %} "><i class="zmdi zmdi-comments "></i><span>Chat Room</span></a>
                 </li>
 
-                <li> <a href="assignments.html" class="menu-toggle"><i class="zmdi zmdi-assignment-alert"></i><span>Assignments</span></a>
-
-                </li>
-                <li> <a href="test-quizes.html" class="menu-toggle"><i class="zmdi zmdi-folder"></i><span>Test and Quizes</span></a>
-
-                </li>
-                <li> <a href="exams.html" class="menu-toggle"><i class="zmdi zmdi-file"></i><span>Exams</span></a>
-
+                <li class="{% active_link 'student_calendar' 'active open' strict=True %} ">
+                    <a href="{% url 'student_calendar' %}"><i class="zmdi zmdi-calendar "></i><span>Calendar</span></a>
                 </li>
 
-                <li> <a href="results.html" class="menu-toggle"><i class="zmdi zmdi-menu"></i><span>Results</span></a>
-
-
+                <li class="{% active_link 'student_resources' 'active open' strict=True %}">
+                    <a href="{% url 'student_resources' %} "><i class="zmdi zmdi-folder "></i><span>Resources</span></a>
                 </li>
 
-                <li> <a href="fees.html" class="menu-toggle"><i class="zmdi zmdi-balance"></i><span>Fees</span></a>
-
+                <li class="{% active_link 'student_course_registration' 'active open' strict=True %}">
+                    <a href="{% url 'student_course_registration' %}"><i class="zmdi zmdi-file "></i><span>Course Registration</span></a>
                 </li>
 
-                <li> <a href="announcements.html" class="menu-toggle"><i class="zmdi zmdi-notifications"></i><span>Announcement</span></a>
+                <li class="{% active_link 'student_subjects_enrolled' 'active open' strict=True %}">
+                    <a href="{% url 'student_subjects_enrolled' %}"><i class="zmdi zmdi-folder-star "></i><span>Subjects Enrolled</span></a>
+                </li>
 
+                <li class="{% active_link 'student_timetable' 'active open' strict=True %}">
+                    <a href="{% url 'student_timetable' %}"><i class="zmdi zmdi-apps "></i><span>Time Table</span></a>
+                </li>
+
+                <li class="{% active_link 'student_gradebook' 'active open' strict=True %}">
+                    <a href="{% url 'student_gradebook' %} "><i class="zmdi zmdi-collection-plus "></i><span>Grade Book</span></a>
+                </li>
+
+                <li class="{% active_link 'student_assignments' 'active open' strict=True %}">
+                    <a href="{% url 'student_assignments' %}"><i class="zmdi zmdi-assignment-alert "></i><span>Assignments</span></a>
+                </li>
+
+                <li class="{% active_link 'student_exams' 'active open' strict=True %}">
+                    <a href="{% url 'student_exams' %}"><i class="zmdi zmdi-file "></i><span>Exams</span></a>
+                </li>
+
+                <li class="{% active_link 'student_results' 'active open' strict=True %}">
+                    <a href="{% url 'student_results' %}"><i class="zmdi zmdi-menu "></i><span>Results</span></a>
+                </li>
+
+                <li class="{% active_link 'student_fees' 'active open' strict=True %}">
+                    <a href="{% url 'student_fees' %}"><i class="zmdi zmdi-balance "></i><span>Fees</span></a>
+                </li>
+
+                <li class="{% active_link 'student_announcements' 'active open' strict=True %}">
+                    <a href="{% url 'student_announcements' %}"><i class="zmdi zmdi-notifications "></i><span>Announcement</span></a>
                 </li>
 
                 <br><br><br><br>
@@ -345,153 +341,153 @@
     </aside>
 
     <!-- Right Sidebar -->
-    <aside id="rightsidebar" class="right-sidebar">
-        <ul class="nav nav-tabs sm">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#chat"><i class="zmdi zmdi-comments"></i></a></li>
+    <aside id="rightsidebar " class="right-sidebar ">
+        <ul class="nav nav-tabs sm ">
+            <li class="nav-item "><a class="nav-link active " data-toggle="tab " href="#setting "><i class="zmdi zmdi-settings zmdi-hc-spin "></i></a></li>
+            <li class="nav-item "><a class="nav-link " data-toggle="tab " href="#chat "><i class="zmdi zmdi-comments "></i></a></li>
         </ul>
-        <div class="tab-content">
-            <div class="tab-pane active" id="setting">
-                <div class="slim_scroll">
-                    <div class="card">
+        <div class="tab-content ">
+            <div class="tab-pane active " id="setting ">
+                <div class="slim_scroll ">
+                    <div class="card ">
                         <h6>Theme Option</h6>
-                        <div class="light_dark">
-                            <div class="radio">
-                                <input type="radio" name="radio1" id="lighttheme" value="light" checked="">
-                                <label for="lighttheme">Light Mode</label>
+                        <div class="light_dark ">
+                            <div class="radio ">
+                                <input type="radio " name="radio1 " id="lighttheme " value="light " checked=" ">
+                                <label for="lighttheme ">Light Mode</label>
                             </div>
-                            <div class="radio mb-0">
-                                <input type="radio" name="radio1" id="darktheme" value="dark">
-                                <label for="darktheme">Dark Mode</label>
+                            <div class="radio mb-0 ">
+                                <input type="radio " name="radio1 " id="darktheme " value="dark ">
+                                <label for="darktheme ">Dark Mode</label>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card ">
                         <h6>Color Skins</h6>
-                        <ul class="choose-skin list-unstyled">
-                            <li data-theme="purple">
-                                <div class="purple"></div>
+                        <ul class="choose-skin list-unstyled ">
+                            <li data-theme="purple ">
+                                <div class="purple "></div>
                             </li>
-                            <li data-theme="blue">
-                                <div class="blue"></div>
+                            <li data-theme="blue ">
+                                <div class="blue "></div>
                             </li>
-                            <li data-theme="cyan">
-                                <div class="cyan"></div>
+                            <li data-theme="cyan ">
+                                <div class="cyan "></div>
                             </li>
-                            <li data-theme="green">
-                                <div class="green"></div>
+                            <li data-theme="green ">
+                                <div class="green "></div>
                             </li>
-                            <li data-theme="orange">
-                                <div class="orange"></div>
+                            <li data-theme="orange ">
+                                <div class="orange "></div>
                             </li>
-                            <li data-theme="blush" class="active">
-                                <div class="blush"></div>
+                            <li data-theme="blush " class="active ">
+                                <div class="blush "></div>
                             </li>
                         </ul>
                     </div>
-                    <div class="card">
+                    <div class="card ">
                         <h6>General Settings</h6>
-                        <ul class="setting-list list-unstyled">
+                        <ul class="setting-list list-unstyled ">
                             <li>
-                                <div class="checkbox">
-                                    <input id="checkbox1" type="checkbox">
-                                    <label for="checkbox1">Report Panel Usage</label>
+                                <div class="checkbox ">
+                                    <input id="checkbox1 " type="checkbox ">
+                                    <label for="checkbox1 ">Report Panel Usage</label>
                                 </div>
                             </li>
                             <li>
-                                <div class="checkbox">
-                                    <input id="checkbox2" type="checkbox" checked="">
-                                    <label for="checkbox2">Email Redirect</label>
+                                <div class="checkbox ">
+                                    <input id="checkbox2 " type="checkbox " checked=" ">
+                                    <label for="checkbox2 ">Email Redirect</label>
                                 </div>
                             </li>
                             <li>
-                                <div class="checkbox">
-                                    <input id="checkbox3" type="checkbox" checked="">
-                                    <label for="checkbox3">Notifications</label>
+                                <div class="checkbox ">
+                                    <input id="checkbox3 " type="checkbox " checked=" ">
+                                    <label for="checkbox3 ">Notifications</label>
                                 </div>
                             </li>
                             <li>
-                                <div class="checkbox">
-                                    <input id="checkbox4" type="checkbox">
-                                    <label for="checkbox4">Auto Updates</label>
+                                <div class="checkbox ">
+                                    <input id="checkbox4 " type="checkbox ">
+                                    <label for="checkbox4 ">Auto Updates</label>
                                 </div>
                             </li>
                             <li>
-                                <div class="checkbox">
-                                    <input id="checkbox5" type="checkbox" checked="">
-                                    <label for="checkbox5">Offline</label>
+                                <div class="checkbox ">
+                                    <input id="checkbox5 " type="checkbox " checked=" ">
+                                    <label for="checkbox5 ">Offline</label>
                                 </div>
                             </li>
                             <li>
-                                <div class="checkbox">
-                                    <input id="checkbox6" type="checkbox" checked="">
-                                    <label for="checkbox6">Location Permission</label>
+                                <div class="checkbox ">
+                                    <input id="checkbox6 " type="checkbox " checked=" ">
+                                    <label for="checkbox6 ">Location Permission</label>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="tab-pane right_chat" id="chat">
-                <div class="slim_scroll">
-                    <div class="card">
-                        <ul class="list-unstyled">
-                            <li class="online">
-                                <a href="javascript:void(0);">
-                                    <div class="media">
-                                        <img class="media-object " src="assets/images/xs/avatar4.jpg" alt="">
-                                        <div class="media-body">
-                                            <span class="name">Sophia <small class="float-right">11:00AM</small></span>
-                                            <span class="message">There are many variations of passages of Lorem Ipsum available</span>
-                                            <span class="badge badge-outline status"></span>
+            <div class="tab-pane right_chat " id="chat ">
+                <div class="slim_scroll ">
+                    <div class="card ">
+                        <ul class="list-unstyled ">
+                            <li class="online ">
+                                <a href="javascript:void(0); ">
+                                    <div class="media ">
+                                        <img class="media-object " src="assets/images/xs/avatar4.jpg " alt=" ">
+                                        <div class="media-body ">
+                                            <span class="name ">Sophia <small class="float-right ">11:00AM</small></span>
+                                            <span class="message ">There are many variations of passages of Lorem Ipsum available</span>
+                                            <span class="badge badge-outline status "></span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <li class="online">
-                                <a href="javascript:void(0);">
-                                    <div class="media">
-                                        <img class="media-object " src="assets/images/xs/avatar5.jpg" alt="">
-                                        <div class="media-body">
-                                            <span class="name">Grayson <small class="float-right">11:30AM</small></span>
-                                            <span class="message">All the Lorem Ipsum generators on the</span>
-                                            <span class="badge badge-outline status"></span>
+                            <li class="online ">
+                                <a href="javascript:void(0); ">
+                                    <div class="media ">
+                                        <img class="media-object " src="assets/images/xs/avatar5.jpg " alt=" ">
+                                        <div class="media-body ">
+                                            <span class="name ">Grayson <small class="float-right ">11:30AM</small></span>
+                                            <span class="message ">All the Lorem Ipsum generators on the</span>
+                                            <span class="badge badge-outline status "></span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <li class="offline">
-                                <a href="javascript:void(0);">
-                                    <div class="media">
-                                        <img class="media-object " src="assets/images/xs/avatar2.jpg" alt="">
-                                        <div class="media-body">
-                                            <span class="name">Isabella <small class="float-right">11:31AM</small></span>
-                                            <span class="message">Contrary to popular belief, Lorem Ipsum</span>
-                                            <span class="badge badge-outline status"></span>
+                            <li class="offline ">
+                                <a href="javascript:void(0); ">
+                                    <div class="media ">
+                                        <img class="media-object " src="assets/images/xs/avatar2.jpg " alt=" ">
+                                        <div class="media-body ">
+                                            <span class="name ">Isabella <small class="float-right ">11:31AM</small></span>
+                                            <span class="message ">Contrary to popular belief, Lorem Ipsum</span>
+                                            <span class="badge badge-outline status "></span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <li class="me">
-                                <a href="javascript:void(0);">
-                                    <div class="media">
-                                        <img class="media-object " src="assets/images/xs/avatar1.jpg" alt="">
-                                        <div class="media-body">
-                                            <span class="name">John <small class="float-right">05:00PM</small></span>
-                                            <span class="message">It is a long established fact that a reader</span>
-                                            <span class="badge badge-outline status"></span>
+                            <li class="me ">
+                                <a href="javascript:void(0); ">
+                                    <div class="media ">
+                                        <img class="media-object " src="assets/images/xs/avatar1.jpg " alt=" ">
+                                        <div class="media-body ">
+                                            <span class="name ">John <small class="float-right ">05:00PM</small></span>
+                                            <span class="message ">It is a long established fact that a reader</span>
+                                            <span class="badge badge-outline status "></span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <li class="online">
-                                <a href="javascript:void(0);">
-                                    <div class="media">
-                                        <img class="media-object " src="assets/images/xs/avatar3.jpg" alt="">
-                                        <div class="media-body">
-                                            <span class="name">Alexander <small class="float-right">06:08PM</small></span>
-                                            <span class="message">Richard McClintock, a Latin professor</span>
-                                            <span class="badge badge-outline status"></span>
+                            <li class="online ">
+                                <a href="javascript:void(0); ">
+                                    <div class="media ">
+                                        <img class="media-object " src="assets/images/xs/avatar3.jpg " alt=" ">
+                                        <div class="media-body ">
+                                            <span class="name ">Alexander <small class="float-right ">06:08PM</small></span>
+                                            <span class="message ">Richard McClintock, a Latin professor</span>
+                                            <span class="badge badge-outline status "></span>
                                         </div>
                                     </div>
                                 </a>
@@ -506,19 +502,19 @@
     {% block content %} {% endblock %}
 
     <!-- Jquery Core Js -->
-    <script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script>
+    <script src="{% static 'assets/bundles/libscripts.bundle.js' %} "></script>
     <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
-    <script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script>
+    <script src="{% static 'assets/bundles/vendorscripts.bundle.js' %} "></script>
     <!-- slimscroll, waves Scripts Plugin Js -->
 
-    <script src="{% static 'assets/bundles/jvectormap.bundle.js' %}"></script>
+    <script src="{% static 'assets/bundles/jvectormap.bundle.js' %} "></script>
     <!-- JVectorMap Plugin Js -->
-    <script src="{% static 'assets/bundles/sparkline.bundle.js' %}"></script>
+    <script src="{% static 'assets/bundles/sparkline.bundle.js' %} "></script>
     <!-- Sparkline Plugin Js -->
-    <script src="{% static 'assets/bundles/c3.bundle.js' %}"></script>
+    <script src="{% static 'assets/bundles/c3.bundle.js' %} "></script>
 
-    <script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script>
-    <script src="{% static 'assets/js/pages/index.js' %}"></script>
+    <script src="{% static 'assets/bundles/mainscripts.bundle.js' %} "></script>
+    <script src="{% static 'assets/js/pages/index.js' %} "></script>
 </body>
 
 
