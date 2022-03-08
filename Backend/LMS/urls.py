@@ -22,9 +22,23 @@ from django.contrib.auth.views import (PasswordResetView,
  PasswordChangeDoneView
  )
 from django.contrib.auth.views import LogoutView
+from .constants import *
+from django.conf.urls.static import static
+from django.conf import settings
+
+admin.site.site_header = SCHOOL_NAME + " Admin"
+admin.site.site_title = SCHOOL_NAME + " Admin Portal"
+admin.site.index_title = "Welcome to " + SCHOOL_NAME + " Admin Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('signin/',views.signin,name='signin'),
     path('student/', include('student.urls')),
+    path('change-password/',views.PasswordChangeManager.as_view(),name='password_change'),
 ]
+
+if settings.DEBUG:
+   urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+   urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

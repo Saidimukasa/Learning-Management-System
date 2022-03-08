@@ -6,9 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
-    <title>{{ school_name }} | Student :: Home</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> {% block head %} {% endblock %}
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Favicon-->
     <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
@@ -24,12 +23,12 @@
 <body class="theme-blush">
 
     <!-- Page Loader -->
-    <!-- <div class="page-loader-wrapper">
+    <div class="page-loader-wrapper">
         <div class="loader">
             <div class="m-t-30"><img class="zmdi-hc-spin" src="{% static 'assets/images/loader.svg' %}" width="48" height="48" alt="Aero"></div>
             <p>Please wait...</p>
         </div>
-    </div> -->
+    </div>
 
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -271,9 +270,9 @@
             <ul class="list">
                 <li>
                     <div class="user-info">
-                        <a class="image" href="profile.html"><img src="{% static 'assets/images/profile_av.jpg' %}" alt="User"></a>
+                        <a class="image" href="profile.html"><img src="{{ student.profile.url }}" alt="User"></a>
                         <div class="detail">
-                            <h4>{{ student.name }}</h4>
+                            <h4>{{ student.first_name }} {{ student.last_name }} </h4>
                             <small>Student</small>
                         </div>
                     </div>
@@ -435,7 +434,7 @@
                             <li class="online ">
                                 <a href="javascript:void(0); ">
                                     <div class="media ">
-                                        <img class="media-object " src="assets/images/xs/avatar4.jpg " alt=" ">
+                                        <img class="media-object " src="{% static 'assets/images/xs/avatar4.jpg' %}" alt=" ">
                                         <div class="media-body ">
                                             <span class="name ">Sophia <small class="float-right ">11:00AM</small></span>
                                             <span class="message ">There are many variations of passages of Lorem Ipsum available</span>
@@ -447,7 +446,7 @@
                             <li class="online ">
                                 <a href="javascript:void(0); ">
                                     <div class="media ">
-                                        <img class="media-object " src="assets/images/xs/avatar5.jpg " alt=" ">
+                                        <img class="media-object " src="{% static 'assets/images/xs/avatar5.jpg' %}" alt=" ">
                                         <div class="media-body ">
                                             <span class="name ">Grayson <small class="float-right ">11:30AM</small></span>
                                             <span class="message ">All the Lorem Ipsum generators on the</span>
@@ -459,7 +458,7 @@
                             <li class="offline ">
                                 <a href="javascript:void(0); ">
                                     <div class="media ">
-                                        <img class="media-object " src="assets/images/xs/avatar2.jpg " alt=" ">
+                                        <img class="media-object " src="{% static 'assets/images/xs/avatar2.jpg' %}" alt=" ">
                                         <div class="media-body ">
                                             <span class="name ">Isabella <small class="float-right ">11:31AM</small></span>
                                             <span class="message ">Contrary to popular belief, Lorem Ipsum</span>
@@ -471,7 +470,7 @@
                             <li class="me ">
                                 <a href="javascript:void(0); ">
                                     <div class="media ">
-                                        <img class="media-object " src="assets/images/xs/avatar1.jpg " alt=" ">
+                                        <img class="media-object " src="{% static 'assets/images/xs/avatar1.jpg' %}" alt=" ">
                                         <div class="media-body ">
                                             <span class="name ">John <small class="float-right ">05:00PM</small></span>
                                             <span class="message ">It is a long established fact that a reader</span>
@@ -483,7 +482,7 @@
                             <li class="online ">
                                 <a href="javascript:void(0); ">
                                     <div class="media ">
-                                        <img class="media-object " src="assets/images/xs/avatar3.jpg " alt=" ">
+                                        <img class="media-object " src="{% static 'assets/images/xs/avatar3.jpg' %}" alt=" ">
                                         <div class="media-body ">
                                             <span class="name ">Alexander <small class="float-right ">06:08PM</small></span>
                                             <span class="message ">Richard McClintock, a Latin professor</span>

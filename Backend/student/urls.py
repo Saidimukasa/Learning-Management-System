@@ -6,6 +6,7 @@ from .views import (StudentDashboard)
 urlpatterns = [
     path('',StudentDashboard.as_view(),name='student_dashboard'),
     path('profile/',views.StudentProfile.as_view(),name='student_profile'),
+    path('profile/edit/',views.StudentEditProfile.as_view(),name='student_edit_profile'),
     path('chat/',views.ChatRoom.as_view(),name='student_chat'),
     path('calendar/',views.StudentCalendar.as_view(),name='student_calendar'),
     path('resources/',views.StudentResources.as_view(),name='student_resources'),

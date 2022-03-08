@@ -3,6 +3,8 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from curriculum.models import Curriculum, Subject
+from .forms import StudentForm
 from .models import Student
 from LMS import constants
 
@@ -38,6 +40,30 @@ class StudentProfile(View):
       }
       return render(request, self.template_name, context)
 
+
+class StudentEditProfile(View):
+   template_name = 'student/profile-edit.html'
+   
+   @method_decorator(login_required, 'signin')
+   def get(self, request):
+      user_id = request.user.id
+      student_id = getLogedInStudentId(user_id)
+      student = Student.objects.get(id=student_id)
+      school_name = constants.SCHOOL_NAME
+      if request.method == 'POST':
+         form = StudentForm(request.POST, instance = Student.objects.get(id=student_id))
+         if form.is_valid():
+            form.save()
+            return redirect('student_profile')
+         else:
+            print(form.errors)
+      else:
+         form = StudentForm()
+      return render(request, self.template_name, {'form': form, 'school_name': school_name, 'student': student})
+         
+      
+   
+   
 class ChatRoom(View):
    template_name = 'student/chat.html'
    
@@ -90,9 +116,13 @@ class StudentCourseRegistration(View):
       user_id = request.user.id
       student_id = getLogedInStudentId(user_id)
       student = Student.objects.get(id=student_id)
+      curriculums = Curriculum.objects.filter(status=True)
+      subjects = Subject.objects.filter(curriculum__status=True)
       context = {
          'student': student,
          'school_name': constants.SCHOOL_NAME,
+         'curriculums': curriculums,
+         'subjects': subjects,
       }
       return render(request, self.template_name, context)
    

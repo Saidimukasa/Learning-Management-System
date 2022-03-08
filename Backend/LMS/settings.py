@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'active_link',
     'account',
     'class',
+    'curriculum',
     'manager',
     'student',
     'teacher',

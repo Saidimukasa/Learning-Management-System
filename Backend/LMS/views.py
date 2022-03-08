@@ -49,7 +49,7 @@ class PasswordChangeManager(View):
             user.save()
             logout(request)
             messages.add_message(request, messages.SUCCESS,
-                                 'Password Chage Successfully')
+                                 'Password Change Successfully')
             return redirect('signin')
         else:
             messages.add_message(request, messages.ERROR,
