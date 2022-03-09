@@ -7,6 +7,9 @@ from django.views import View
 from account.models import Account
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import logout
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, PasswordResetForm, SetPasswordForm
+import sweetify
+from django.contrib.auth import update_session_auth_hash
 
 
 def signin(request):
@@ -55,3 +58,22 @@ class PasswordChangeManager(View):
             messages.add_message(request, messages.ERROR,
                                  'password does not match')
             return redirect(reverse_lazy('password_change'))
+
+
+def change_password(request):
+   template_name = 'student/profile-edit.html'
+   if request.method == 'POST':
+      form = PasswordChangeForm(request.user, request.POST)
+      if form.is_valid():
+         user = form.save()
+         update_session_auth_hash(request, user)
+         sweetify.success(request, 'Password changed successfully')
+         return redirect('student_profile')
+      else:
+         sweetify.error(request, 'Password change failed')
+         messages.error(request, form.errors)
+         
+         print(form.errors)
+   else:
+      form = PasswordChangeForm(request.user)
+   return render(request, template_name, {'form': form})
