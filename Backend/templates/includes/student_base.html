@@ -1,6 +1,6 @@
 {% load static %} {% load active_link_tags %}
 <!doctype html>
-<html class="no-js " lang="en">
+<html class="no-js" lang="en">
 
 
 <head>
@@ -45,7 +45,6 @@
     <!-- Right Icon menu Sidebar -->
     <div class="navbar-right">
         <ul class="navbar-nav">
-            <li><a href="#search" class="main_search" title="Search..."><i class="zmdi zmdi-search"></i></a></li>
             <li class="dropdown">
                 <a href="javascript:void(0);" class="dropdown-toggle" title="App" data-toggle="dropdown" role="button"><i class="zmdi zmdi-apps"></i></a>
                 <ul class="dropdown-menu slideUp2">
@@ -168,93 +167,7 @@
                     <li class="footer"> <a href="javascript:void(0);">View All Notifications</a> </li>
                 </ul>
             </li>
-            <li class="dropdown">
-                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"><i class="zmdi zmdi-flag"></i>
-            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
-            </a>
-                <ul class="dropdown-menu slideUp2">
-                    <li class="header">Tasks List <small class="float-right"><a href="javascript:void(0);">View All</a></small></li>
-                    <li class="body">
-                        <ul class="menu tasks list-unstyled">
-                            <li>
-                                <div class="progress-container progress-primary">
-                                    <span class="progress-badge">eCommerce Website</span>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
-                                            <span class="progress-value">86%</span>
-                                        </div>
-                                    </div>
-                                    <ul class="list-unstyled team-info">
-                                        <li class="m-r-15"><small>Team</small></li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar3.jpg' %}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar4.jpg' %}" alt="Avatar">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="progress-container">
-                                    <span class="progress-badge">iOS Game Dev</span>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                                            <span class="progress-value">45%</span>
-                                        </div>
-                                    </div>
-                                    <ul class="list-unstyled team-info">
-                                        <li class="m-r-15"><small>Team</small></li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar10.jpg' %}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar9.jpg' %}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar8.jpg' %}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar6.jpg' %}" alt="Avatar">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="progress-container progress-warning">
-                                    <span class="progress-badge">Home Development</span>
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" style="width: 29%;">
-                                            <span class="progress-value">29%</span>
-                                        </div>
-                                    </div>
-                                    <ul class="list-unstyled team-info">
-                                        <li class="m-r-15"><small>Team</small></li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar5.jpg' %}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="Avatar">
-                                        </li>
-                                        <li>
-                                            <img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="Avatar">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="javascript:void(0);" class="app_calendar" title="Calendar"><i class="zmdi zmdi-calendar"></i></a></li>
-            <li><a href="javascript:void(0);" class="app_google_drive" title="Google Drive"><i class="zmdi zmdi-google-drive"></i></a></li>
-            <li><a href="javascript:void(0);" class="app_group_work" title="Group Work"><i class="zmdi zmdi-group-work"></i></a></li>
+           
             <li><a href="javascript:void(0);" class="js-right-sidebar" title="Setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
             <li><a href="sign-in.html" class="mega-menu" title="Sign Out"><i class="zmdi zmdi-power"></i></a></li>
         </ul>
@@ -277,60 +190,60 @@
                         </div>
                     </div>
                 </li>
-                <li class="{% active_link 'student_dashboard' 'active open' strict=True %} ">
-                    <a href="{% url 'student_dashboard' %} "><i class="zmdi zmdi-home "></i><span>Dashboard</span></a>
+                <li class="{% active_link 'student_dashboard' 'active open' strict=True %}">
+                    <a href="{% url 'student_dashboard' %}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a>
                 </li>
 
-                <li class="{% active_link 'student_profile' 'active open' strict=True %} ">
-                    <a href="{% url 'student_profile' %}"><i class="zmdi zmdi-account "></i><span>  Profile</span></a>
+                <li class="{% active_link 'student_profile' 'active open' strict=True %}">
+                    <a href="{% url 'student_profile' %}"><i class="zmdi zmdi-account"></i><span>  Profile</span></a>
                 </li>
 
-                <li class="{% active_link 'student_chat' 'active open' strict=True %} ">
-                    <a href="{% url 'student_chat' %} "><i class="zmdi zmdi-comments "></i><span>Chat Room</span></a>
+                <li class="{% active_link 'student_chat' 'active open' strict=True %}">
+                    <a href="{% url 'student_chat' %}"><i class="zmdi zmdi-comments"></i><span>Chat Room</span></a>
                 </li>
 
-                <li class="{% active_link 'student_calendar' 'active open' strict=True %} ">
-                    <a href="{% url 'student_calendar' %}"><i class="zmdi zmdi-calendar "></i><span>Calendar</span></a>
+                <li class="{% active_link 'student_calendar' 'active open' strict=True %}">
+                    <a href="{% url 'student_calendar' %}"><i class="zmdi zmdi-calendar"></i><span>Calendar</span></a>
                 </li>
 
                 <li class="{% active_link 'student_resources' 'active open' strict=True %}">
-                    <a href="{% url 'student_resources' %} "><i class="zmdi zmdi-folder "></i><span>Resources</span></a>
+                    <a href="{% url 'student_resources' %}"><i class="zmdi zmdi-folder"></i><span>Resources</span></a>
                 </li>
 
-                <li class="{% active_link 'student_course_registration' 'active open' strict=True %}">
-                    <a href="{% url 'student_course_registration' %}"><i class="zmdi zmdi-file "></i><span>Course Registration</span></a>
+                <li class="{% active_link 'student_subject_registration' 'active open' strict=True %}">
+                    <a href="{% url 'student_subject_registration' %}"><i class="zmdi zmdi-file"></i><span>Subject Registration</span></a>
                 </li>
 
                 <li class="{% active_link 'student_subjects_enrolled' 'active open' strict=True %}">
-                    <a href="{% url 'student_subjects_enrolled' %}"><i class="zmdi zmdi-folder-star "></i><span>Subjects Enrolled</span></a>
+                    <a href="{% url 'student_subjects_enrolled' %}"><i class="zmdi zmdi-folder-star"></i><span>Subjects Enrolled</span></a>
                 </li>
 
                 <li class="{% active_link 'student_timetable' 'active open' strict=True %}">
-                    <a href="{% url 'student_timetable' %}"><i class="zmdi zmdi-apps "></i><span>Time Table</span></a>
+                    <a href="{% url 'student_timetable' %}"><i class="zmdi zmdi-apps"></i><span>Time Table</span></a>
                 </li>
 
                 <li class="{% active_link 'student_gradebook' 'active open' strict=True %}">
-                    <a href="{% url 'student_gradebook' %} "><i class="zmdi zmdi-collection-plus "></i><span>Grade Book</span></a>
+                    <a href="{% url 'student_gradebook' %}"><i class="zmdi zmdi-collection-plus"></i><span>Grade Book</span></a>
                 </li>
 
                 <li class="{% active_link 'student_assignments' 'active open' strict=True %}">
-                    <a href="{% url 'student_assignments' %}"><i class="zmdi zmdi-assignment-alert "></i><span>Assignments</span></a>
+                    <a href="{% url 'student_assignments' %}"><i class="zmdi zmdi-assignment-alert"></i><span>Assignments</span></a>
                 </li>
 
                 <li class="{% active_link 'student_exams' 'active open' strict=True %}">
-                    <a href="{% url 'student_exams' %}"><i class="zmdi zmdi-file "></i><span>Exams</span></a>
+                    <a href="{% url 'student_exams' %}"><i class="zmdi zmdi-file"></i><span>Exams</span></a>
                 </li>
 
                 <li class="{% active_link 'student_results' 'active open' strict=True %}">
-                    <a href="{% url 'student_results' %}"><i class="zmdi zmdi-menu "></i><span>Results</span></a>
+                    <a href="{% url 'student_results' %}"><i class="zmdi zmdi-menu"></i><span>Results</span></a>
                 </li>
 
                 <li class="{% active_link 'student_fees' 'active open' strict=True %}">
-                    <a href="{% url 'student_fees' %}"><i class="zmdi zmdi-balance "></i><span>Fees</span></a>
+                    <a href="{% url 'student_fees' %}"><i class="zmdi zmdi-balance"></i><span>Fees</span></a>
                 </li>
 
                 <li class="{% active_link 'student_announcements' 'active open' strict=True %}">
-                    <a href="{% url 'student_announcements' %}"><i class="zmdi zmdi-notifications "></i><span>Announcement</span></a>
+                    <a href="{% url 'student_announcements' %}"><i class="zmdi zmdi-notifications"></i><span>Announcement</span></a>
                 </li>
 
                 <br><br><br><br>
@@ -340,156 +253,46 @@
     </aside>
 
     <!-- Right Sidebar -->
-    <aside id="rightsidebar " class="right-sidebar ">
-        <ul class="nav nav-tabs sm ">
-            <li class="nav-item "><a class="nav-link active " data-toggle="tab " href="#setting "><i class="zmdi zmdi-settings zmdi-hc-spin "></i></a></li>
-            <li class="nav-item "><a class="nav-link " data-toggle="tab " href="#chat "><i class="zmdi zmdi-comments "></i></a></li>
+    <aside id="rightsidebar" class="right-sidebar">
+        <ul class="nav nav-tabs sm >
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
         </ul>
-        <div class="tab-content ">
-            <div class="tab-pane active " id="setting ">
-                <div class="slim_scroll ">
-                    <div class="card ">
+        <div class="tab-content">
+            <div class="tab-pane active" id="setting">
+                <div class="slim_scroll">
+                    <div class="card">
                         <h6>Theme Option</h6>
-                        <div class="light_dark ">
-                            <div class="radio ">
-                                <input type="radio " name="radio1 " id="lighttheme " value="light " checked=" ">
-                                <label for="lighttheme ">Light Mode</label>
+                        <div class="light_dark">
+                            <div class="radio">
+                                <input type="radio" name="radio1" id="lighttheme" value="light" checked="">
+                                <label for="lighttheme">Light Mode</label>
                             </div>
-                            <div class="radio mb-0 ">
-                                <input type="radio " name="radio1 " id="darktheme " value="dark ">
-                                <label for="darktheme ">Dark Mode</label>
+                            <div class="radio mb-0">
+                                <input type="radio" name="radio1" id="darktheme" value="dark">
+                                <label for="darktheme">Dark Mode</label>
                             </div>
                         </div>
                     </div>
-                    <div class="card ">
+                    <div class="card">
                         <h6>Color Skins</h6>
-                        <ul class="choose-skin list-unstyled ">
-                            <li data-theme="purple ">
-                                <div class="purple "></div>
+                        <ul class="choose-skin list-unstyled">
+                            <li data-theme="purple">
+                                <div class="purple"></div>
                             </li>
-                            <li data-theme="blue ">
-                                <div class="blue "></div>
+                            <li data-theme="blue">
+                                <div class="blue"></div>
                             </li>
-                            <li data-theme="cyan ">
-                                <div class="cyan "></div>
+                            <li data-theme="cyan">
+                                <div class="cyan"></div>
                             </li>
-                            <li data-theme="green ">
-                                <div class="green "></div>
+                            <li data-theme="green">
+                                <div class="green"></div>
                             </li>
-                            <li data-theme="orange ">
-                                <div class="orange "></div>
+                            <li data-theme="orange">
+                                <div class="orange"></div>
                             </li>
-                            <li data-theme="blush " class="active ">
-                                <div class="blush "></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card ">
-                        <h6>General Settings</h6>
-                        <ul class="setting-list list-unstyled ">
-                            <li>
-                                <div class="checkbox ">
-                                    <input id="checkbox1 " type="checkbox ">
-                                    <label for="checkbox1 ">Report Panel Usage</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox ">
-                                    <input id="checkbox2 " type="checkbox " checked=" ">
-                                    <label for="checkbox2 ">Email Redirect</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox ">
-                                    <input id="checkbox3 " type="checkbox " checked=" ">
-                                    <label for="checkbox3 ">Notifications</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox ">
-                                    <input id="checkbox4 " type="checkbox ">
-                                    <label for="checkbox4 ">Auto Updates</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox ">
-                                    <input id="checkbox5 " type="checkbox " checked=" ">
-                                    <label for="checkbox5 ">Offline</label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="checkbox ">
-                                    <input id="checkbox6 " type="checkbox " checked=" ">
-                                    <label for="checkbox6 ">Location Permission</label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane right_chat " id="chat ">
-                <div class="slim_scroll ">
-                    <div class="card ">
-                        <ul class="list-unstyled ">
-                            <li class="online ">
-                                <a href="javascript:void(0); ">
-                                    <div class="media ">
-                                        <img class="media-object " src="{% static 'assets/images/xs/avatar4.jpg' %}" alt=" ">
-                                        <div class="media-body ">
-                                            <span class="name ">Sophia <small class="float-right ">11:00AM</small></span>
-                                            <span class="message ">There are many variations of passages of Lorem Ipsum available</span>
-                                            <span class="badge badge-outline status "></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="online ">
-                                <a href="javascript:void(0); ">
-                                    <div class="media ">
-                                        <img class="media-object " src="{% static 'assets/images/xs/avatar5.jpg' %}" alt=" ">
-                                        <div class="media-body ">
-                                            <span class="name ">Grayson <small class="float-right ">11:30AM</small></span>
-                                            <span class="message ">All the Lorem Ipsum generators on the</span>
-                                            <span class="badge badge-outline status "></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="offline ">
-                                <a href="javascript:void(0); ">
-                                    <div class="media ">
-                                        <img class="media-object " src="{% static 'assets/images/xs/avatar2.jpg' %}" alt=" ">
-                                        <div class="media-body ">
-                                            <span class="name ">Isabella <small class="float-right ">11:31AM</small></span>
-                                            <span class="message ">Contrary to popular belief, Lorem Ipsum</span>
-                                            <span class="badge badge-outline status "></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="me ">
-                                <a href="javascript:void(0); ">
-                                    <div class="media ">
-                                        <img class="media-object " src="{% static 'assets/images/xs/avatar1.jpg' %}" alt=" ">
-                                        <div class="media-body ">
-                                            <span class="name ">John <small class="float-right ">05:00PM</small></span>
-                                            <span class="message ">It is a long established fact that a reader</span>
-                                            <span class="badge badge-outline status "></span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="online ">
-                                <a href="javascript:void(0); ">
-                                    <div class="media ">
-                                        <img class="media-object " src="{% static 'assets/images/xs/avatar3.jpg' %}" alt=" ">
-                                        <div class="media-body ">
-                                            <span class="name ">Alexander <small class="float-right ">06:08PM</small></span>
-                                            <span class="message ">Richard McClintock, a Latin professor</span>
-                                            <span class="badge badge-outline status "></span>
-                                        </div>
-                                    </div>
-                                </a>
+                            <li data-theme="blush" class="active">
+                                <div class="blush"></div>
                             </li>
                         </ul>
                     </div>
@@ -501,19 +304,19 @@
     {% block content %} {% endblock %}
 
     <!-- Jquery Core Js -->
-    <script src="{% static 'assets/bundles/libscripts.bundle.js' %} "></script>
+    <script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script>
     <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
-    <script src="{% static 'assets/bundles/vendorscripts.bundle.js' %} "></script>
+    <script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script>
     <!-- slimscroll, waves Scripts Plugin Js -->
 
-    <script src="{% static 'assets/bundles/jvectormap.bundle.js' %} "></script>
+    <script src="{% static 'assets/bundles/jvectormap.bundle.js' %}"></script>
     <!-- JVectorMap Plugin Js -->
-    <script src="{% static 'assets/bundles/sparkline.bundle.js' %} "></script>
+    <script src="{% static 'assets/bundles/sparkline.bundle.js' %}"></script>
     <!-- Sparkline Plugin Js -->
-    <script src="{% static 'assets/bundles/c3.bundle.js' %} "></script>
+    <script src="{% static 'assets/bundles/c3.bundle.js' %}"></script>
 
-    <script src="{% static 'assets/bundles/mainscripts.bundle.js' %} "></script>
-    <script src="{% static 'assets/js/pages/index.js' %} "></script>
+    <script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script>
+    <script src="{% static 'assets/js/pages/index.js' %}"></script>
 </body>
 
 

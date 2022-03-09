@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from curriculum.models import Curriculum, Subject
+from curriculum.models import Class, Curriculum, Subject
 from .forms import StudentForm
 from .models import Student
 from LMS import constants
@@ -108,8 +108,8 @@ class StudentResources(View):
       return render(request, self.template_name, context)
    
 
-class StudentCourseRegistration(View):
-   template_name = 'student/course_registration.html'
+class StudentSubjectRegistration(View):
+   template_name = 'student/subject-registration.html'
    
    @method_decorator(login_required, 'signin')
    def get(self, request):
@@ -117,12 +117,14 @@ class StudentCourseRegistration(View):
       student_id = getLogedInStudentId(user_id)
       student = Student.objects.get(id=student_id)
       curriculums = Curriculum.objects.filter(status=True)
-      subjects = Subject.objects.filter(curriculum__status=True)
+      subjects = Subject.objects.all()
+      classes = Class.objects.all()
       context = {
          'student': student,
          'school_name': constants.SCHOOL_NAME,
          'curriculums': curriculums,
          'subjects': subjects,
+         'classes': classes,
       }
       return render(request, self.template_name, context)
    
