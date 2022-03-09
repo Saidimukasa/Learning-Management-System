@@ -7,6 +7,9 @@ from curriculum.models import Class, Curriculum, Subject
 from .forms import StudentForm
 from .models import Student
 from LMS import constants
+from django.views.generic.edit import FormView
+from django.contrib import messages
+import sweetify
 
 def getLogedInStudentId(user_id):
     s = Student.objects.get(user_id=user_id)
@@ -41,25 +44,54 @@ class StudentProfile(View):
       return render(request, self.template_name, context)
 
 
-class StudentEditProfile(View):
+def student_edit_profile(request):
    template_name = 'student/profile-edit.html'
-   
-   @method_decorator(login_required, 'signin')
-   def get(self, request):
-      user_id = request.user.id
-      student_id = getLogedInStudentId(user_id)
-      student = Student.objects.get(id=student_id)
-      school_name = constants.SCHOOL_NAME
-      if request.method == 'POST':
-         form = StudentForm(request.POST, instance = Student.objects.get(id=student_id))
-         if form.is_valid():
-            form.save()
-            return redirect('student_profile')
-         else:
-            print(form.errors)
+   if request.method == 'POST':
+      form = StudentForm(request.POST, request.FILES, instance = request.user.student)
+      if form.is_valid():
+         form.save()
+         sweetify.success(request, 'Success', text='Profile updated successfully')
+         return redirect('student_profile')
       else:
-         form = StudentForm()
-      return render(request, self.template_name, {'form': form, 'school_name': school_name, 'student': student})
+         print(form.errors)
+         sweetify.error(request, 'Error', text='Error updating profile')
+   else:
+      form = StudentForm(instance = request.user.student)
+   return render(request, template_name, {'form': form})
+
+# class StudentEditProfile(FormView):
+#    template_name = 'student/profile-edit.html'
+#    form_class = StudentForm
+#    success_url = reverse_lazy('student:student_profile')
+   
+#    def form_valid(self, form):
+#       user_id = self.request.user.id
+#       student_id = getLogedInStudentId(user_id)
+#       student = Student.objects.get(id=student_id)
+#       student.first_name = form.cleaned_data['first_name']
+#       student.last_name = form.cleaned_data['last_name']
+#       # student.email = form.cleaned_data['email']
+#       student.contact_no = form.cleaned_data['contact_no']
+#       student.save()
+#       return super(StudentEditProfile, self).form_valid(form)
+   
+   
+   # @method_decorator(login_required, 'signin')
+   # def get(self, request):
+   #    user_id = request.user.id
+   #    student_id = getLogedInStudentId(user_id)
+   #    student = Student.objects.get(id=student_id)
+   #    school_name = constants.SCHOOL_NAME
+   #    if request.method == 'POST':
+   #       form = StudentForm(request.POST, instance = Student.objects.get(id=student_id))
+   #       if form.is_valid():
+   #          form.save()
+   #          return redirect('student_profile')
+   #       else:
+   #          print(form.errors)
+   #    else:
+   #       form = StudentForm()
+   #    return render(request, self.template_name, {'form': form, 'school_name': school_name, 'student': student})
          
       
    
