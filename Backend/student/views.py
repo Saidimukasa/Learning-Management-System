@@ -185,6 +185,36 @@ class StudentAssignments(View):
       }
       return render(request, self.template_name, context)
 
+
+class StudentAssignmentDetail(View):
+   template_name = 'student/assignment-details.html'
+   
+   @method_decorator(login_required, 'signin')
+   def get(self, request):
+      user_id = request.user.id
+      student_id = getLogedInStudentId(user_id)
+      student = Student.objects.get(id=student_id)
+      context = {
+         'student': student,
+         'school_name': constants.SCHOOL_NAME,
+      }
+      return render(request, self.template_name, context)
+
+class StudentExamDetail(View):
+   template_name = 'student/exam-details.html'
+   
+   @method_decorator(login_required, 'signin')
+   def get(self, request):
+      user_id = request.user.id
+      student_id = getLogedInStudentId(user_id)
+      student = Student.objects.get(id=student_id)
+      context = {
+         'student': student,
+         'school_name': constants.SCHOOL_NAME,
+      }
+      return render(request, self.template_name, context)
+   
+   
 class StudentExams(View):
    template_name = 'student/exams.html'
    
