@@ -1,4 +1,8 @@
 {% extends 'includes/student_base.html' %} {% load static %} {% block content %}
+<!--ck editor-->
+<link rel="stylesheet" href="{% static 'assets/css/cktyles.css'%}">
+
+
 <!-- Main Content -->
 <section class="content">
     <div class="body_scroll">
@@ -51,7 +55,7 @@
                     </table>
                 </div>
             </br></br>
-            <p><em>Instructions</em></p>
+            <p class="font-weight-bold text-blue">Instructions</p>
             <div class="p-3" style="border: thin solid black">
                 <p>The paper must be typed on a computer and comply with the following requirements: Font: Times New Roman, font size 12, and a line spacing of 1.5. Word count: The length of the home assignment should not exceed 1500 words. </p>
                 <br>
@@ -66,15 +70,41 @@
                 <p class="text-danger text-bold">When you take facts, thoughts, ideas, viewpoints, and short or long quotations from others and use them in your own work, the sources you have used must be clearly stated. In other words, you must not give the impression that others’ thoughts, ideas, viewpoints, and results are your own if they are not.</p>
   
             </div>
+
         </br>
-           <h4>Additional resources for assignment.</h4>
-</br></br>
-<h4>Submitted Attachments.</h4>
-</br></br>
-<h5>Additional instructor's comments about your submission</h5>
-</br></br>
-<button class="btn btn-primary">Back to List</button>
-</br></br>
+        </br>
+        <div class="centered col-lg-12 p-3">
+            <p class="font-weight-bold text-blue">Additional resources for assignment.</p>
+            </br></br>
+            <div class="row row-editor">
+                <div class="editor-container">
+                    <div class="editor">
+                             
+                        
+                    </div>
+                </div>
+            </div></div>
+        </div>       
+        <br>
+        <br>
+        <div class="p-3">
+        <input type="file" class="btn btn-primary">
+        </div>
+
+        <br>
+        <br>
+        <div class="col-12 p-3">
+            
+            <p class="font-weight-bold text-blue">Submitted Attachments.</p>
+            </br></br>
+            <p class="font-weight-bold text-blue">Additional instructor's comments about your submission</p>
+        </br></br>
+       <span> <button class="btn btn-primary mr-5">SUBMIT</button>
+            
+        <button class="btn btn-primary ml-5">Back to List</button></span>
+            </br></br>
+        </div>
+
 
 
         
@@ -83,5 +113,49 @@
         </div>
     </div>
 </section>
+
+<script src="{% static 'assets/plugins/ckeditor/ckeditor.js' %}"></script>
+
+		<script>
+			const watchdog = new CKSource.EditorWatchdog();
+			
+			window.watchdog = watchdog;
+			
+			watchdog.setCreator( ( element, config ) => {
+				return CKSource.Editor
+					.create( element, config )
+					.then( editor => {
+					
+						return editor;
+					} )
+			} );
+			
+			watchdog.setDestructor( editor => {
+				
+				
+			
+				return editor.destroy();
+			} );
+			
+			watchdog.on( 'error', handleError );
+			
+			watchdog
+				.create( document.querySelector( '.editor' ), {
+					
+					licenseKey: '',
+					
+					
+					
+				} )
+				.catch( handleError );
+			
+			function handleError( error ) {
+				console.error( 'Oops, something went wrong!' );
+				console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+				console.warn( 'Build id: m69enl80baeq-9mxk2awbny5s' );
+				console.error( error );
+			}
+			
+		</script>
 
 {% endblock %}
