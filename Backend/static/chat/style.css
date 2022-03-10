@@ -8,6 +8,7 @@
     justify-self: left;
     display: grid;
     grid-template-columns: 1fr;
+    -ms-grid-columns: 1fr;
     grid-template-rows: 59px 89px 50px repeat(auto-fit, minmax(73px, 73px));
     width: 100%;
     border-right: .75px solid #CCC;
