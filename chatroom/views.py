@@ -34,7 +34,7 @@ def room(request, group_id):
     #TODO: make sure user assigned to existing group
     assigned_groups = list(request.user.group.values_list('id', flat=True))
     groups_participated = ChatGroup.objects.filter(id__in=assigned_groups)
-    return render(request, 'chat/room.html', {
+    return render(request, 'chat/chat.html', {
             'chatgroup': chatgroup,
             'participants': get_participants(group_obj=chatgroup, user=request.user.email),
             'groups_participated': groups_participated
