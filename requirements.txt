@@ -38,7 +38,6 @@ sqlparse==0.4.2
 sweetify==2.3.0
 tortoise-orm==0.18.1
 Twisted==22.2.0
-twisted-iocpsupport==1.0.2
 txaio==22.2.1
 typing_extensions==4.1.1
 tzdata==2021.5
