@@ -39,7 +39,9 @@ class AccountManager(BaseUserManager):
         return user
 
 class Account(AbstractBaseUser):
-    email           =models.EmailField(max_length=255, unique=True, verbose_name='Email')
+    email =         models.EmailField(max_length=255, unique=True, verbose_name='Email')
+    first_name =    models.CharField(max_length=100, verbose_name='First Name')
+    last_name =     models.CharField(max_length=100, verbose_name='Last Name')
     is_manager =    models.BooleanField(default=False, verbose_name='Manager')
     is_teacher =    models.BooleanField(default=False,verbose_name= 'Teacher')
     is_student =    models.BooleanField(default=False, verbose_name='Student')
@@ -47,8 +49,8 @@ class Account(AbstractBaseUser):
     is_active =     models.BooleanField(default=True, verbose_name='Active')
     is_staff =      models.BooleanField(default=False, verbose_name='Staff')
     is_admin =      models.BooleanField(default=False, verbose_name='Admin')
-    date_joined     = models.DateTimeField(verbose_name='Date Joined',auto_now_add= True)
-    last_login      = models.DateTimeField(verbose_name='Last Active', auto_now=True)
+    date_joined =   models.DateTimeField(verbose_name='Date Joined',auto_now_add= True)
+    last_login =    models.DateTimeField(verbose_name='Last Active', auto_now=True)
     group = models.ManyToManyField(Group, verbose_name='groups', blank=True, related_name='user_set', related_query_name='user')
         
     class Meta:

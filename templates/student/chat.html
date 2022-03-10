@@ -1,4 +1,7 @@
- {% extends 'includes/student_base.html' %} {% load static %} {% block content %}
+ {% extends 'includes/student_base.html' %} {% load static %} {% block head %}
+<meta name="description" content="Learning Management System">
+<title>{{ school_name }} | Student :: Chat Room</title>
+{% endblock %} {% block content %}
 
 <section class="content">
     <div class="body_scroll">
@@ -8,7 +11,7 @@
                     <h2>Chat</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> {{school_name}}</a></li>
-                        
+
                         <li class="breadcrumb-item active">Chat</li>
                     </ul>
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>

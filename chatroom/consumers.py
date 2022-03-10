@@ -43,16 +43,16 @@ class ChatConsumer(AsyncWebsocketConsumer):
         await self.channel_layer.group_send(
             self.room_group_name,
             {
-                'type': 'chat_message',
-                'username': self.scope['user'].email.title(),
-                'message': message,
-                'message_type': message_type,
-                'image_caption': image_caption
+               'type': 'chat_message',
+               'username': self.scope['user'].first_name.title() + ' ' + self.scope['user'].last_name.title(),
+               'message': message,
+               'message_type': message_type,
+               'image_caption': image_caption
             }
         )
 
         await chat_save_message(
-            username=self.scope['user'].email.title(),
+            username=self.scope['user'].first_name.title() + ' ' + self.scope['user'].last_name.title(),
             room_id=self.room_name,
             message=message,
             message_type=message_type,
@@ -62,7 +62,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     # Receive message from room group
     async def chat_message(self, event):
-        """ exhange message here """
+        """ exchange message here """
         message = event['message']
         username = event['username']
         image_caption = event['image_caption']
