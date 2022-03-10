@@ -72,7 +72,6 @@ def change_password(request):
       else:
          sweetify.error(request, 'Password change failed')
          messages.error(request, form.errors)
-         
          print(form.errors)
    else:
       form = PasswordChangeForm(request.user)

@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'active_link',
+    'channels',
     'sweetify',
     'account',
+    'chatroom',
     'class',
     'curriculum',
     'manager',
@@ -132,6 +134,25 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = 'account.Account'
 
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
+
+ASGI_APPLICATION = 'LMS.asgi.application'
+
+CHANNEL_LAYERS = {
+      "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+   },
+}
+
+TORTOISE_INIT = {
+    "db_url": "sqlite://db.sqlite3.tortoise",
+    "modules" : {
+        "models": ["chatroom.tortoise_models"]
+     }
+}
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
