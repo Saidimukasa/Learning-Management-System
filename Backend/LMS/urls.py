@@ -34,7 +34,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('signin/',views.signin,name='signin'),
     path('student/', include('student.urls')),
-    path('change-password/',views.PasswordChangeManager.as_view(),name='password_change'),
+    path('chat/', include('chatroom.urls')),
+   #  path('change-password/',views.PasswordChangeManager.as_view(),name='password_change'),
+    path('change-password/',views.change_password,name='password_change'),
 ]
 
 if settings.DEBUG:

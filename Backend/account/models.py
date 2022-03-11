@@ -1,8 +1,9 @@
 from django.db import models
 from django.core.exceptions import ValidationError
-from django.contrib.auth.models import  AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import  AbstractBaseUser, BaseUserManager, Group, GroupManager
 from .validators import validate_username
 from django.utils.timezone import now
+
 
 class AccountManager(BaseUserManager):
     def create_user(self, email, password=None):
@@ -48,6 +49,7 @@ class Account(AbstractBaseUser):
     is_admin =      models.BooleanField(default=False, verbose_name='Admin')
     date_joined     = models.DateTimeField(verbose_name='Date Joined',auto_now_add= True)
     last_login      = models.DateTimeField(verbose_name='Last Active', auto_now=True)
+    group = models.ManyToManyField(Group, verbose_name='groups', blank=True, related_name='user_set', related_query_name='user')
         
     class Meta:
         db_table = 'Account'
