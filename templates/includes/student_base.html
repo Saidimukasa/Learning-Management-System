@@ -52,41 +52,42 @@
                     <li class="body">
                         <ul class="menu app_sortcut list-unstyled">
                             <li>
-                                <a href="image-gallery.html">
-                                    <div class="icon-circle mb-2 bg-blue"><i class="zmdi zmdi-camera"></i></div>
-                                    <p class="mb-0">Photos</p>
+                                <a href="{% url 'student_assignments' %}">
+                                    <div class="icon-circle mb-2 bg-blue"><i class="zmdi zmdi-file"></i></div>
+                                    <p class="mb-0">Assignments</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
-                                    <div class="icon-circle mb-2 bg-amber"><i class="zmdi zmdi-translate"></i></div>
-                                    <p class="mb-0">Translate</p>
+                                <a href="{% url 'student_resources' %}">
+                                    <div class="icon-circle mb-2 bg-amber"><i class="zmdi zmdi-folder"></i></div>
+                                    <p class="mb-0">Resources</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="events.html">
-                                    <div class="icon-circle mb-2 bg-green"><i class="zmdi zmdi-calendar"></i></div>
-                                    <p class="mb-0">Calendar</p>
+                                <a href="{% url 'student_fees' %}">
+                                    <div class="icon-circle mb-2 bg-green"><i class="zmdi zmdi-balance"></i></div>
+                                    <p class="mb-0">Fees</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="contact.html">
-                                    <div class="icon-circle mb-2 bg-purple"><i class="zmdi zmdi-account-calendar"></i></div>
-                                    <p class="mb-0">Contacts</p>
+                                <a href="{% url 'student_results' %}">
+                                    <div class="icon-circle mb-2 bg-purple"><i class="zmdi zmdi-menu"></i></div>
+                                    <p class="mb-0">Results</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
-                                    <div class="icon-circle mb-2 bg-red"><i class="zmdi zmdi-tag"></i></div>
-                                    <p class="mb-0">News</p>
+                                <a href="{% url 'student_announcements' %}">
+                                    <div class="icon-circle mb-2 bg-purple"><i class="zmdi zmdi-notifications"></i></div>
+                                    <p class="mb-0">Notifications</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
-                                    <div class="icon-circle mb-2 bg-grey"><i class="zmdi zmdi-map"></i></div>
-                                    <p class="mb-0">Maps</p>
+                                <a href="{% url 'student_timetable' %}">
+                                    <div class="icon-circle mb-2 bg-purple"><i class="zmdi zmdi-apps"></i></div>
+                                    <p class="mb-0">Timetable</p>
                                 </a>
                             </li>
+                           
                         </ul>
                     </li>
                 </ul>

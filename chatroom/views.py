@@ -1,12 +1,15 @@
 from re import T
 from django.shortcuts import render
+
+from student.models import Student
+from student.views import getLogedInStudentId
 from .models import ChatGroup
 from .tortoise_models import ChatMessage
 from tortoise import Tortoise
 from django.conf import settings
 from asgiref.sync import sync_to_async
 from django.http import JsonResponse
-from LMS.settings import TORTOISE_INIT
+from LMS.constants import SCHOOL_NAME
 
 
 def index(request):
@@ -34,10 +37,15 @@ def room(request, group_id):
     #TODO: make sure user assigned to existing group
     assigned_groups = list(request.user.group.values_list('id', flat=True))
     groups_participated = ChatGroup.objects.filter(id__in=assigned_groups)
-    return render(request, 'chat/chat.html', {
+    user_id = request.user.id
+    student_id = getLogedInStudentId(user_id)
+    student = Student.objects.get(id=student_id)
+    return render(request, 'chat/room.html', {
             'chatgroup': chatgroup,
             'participants': get_participants(group_obj=chatgroup, user=request.user.email),
-            'groups_participated': groups_participated
+            'groups_participated': groups_participated,
+            'student': student,
+            'school_name': SCHOOL_NAME,
      })
 
 

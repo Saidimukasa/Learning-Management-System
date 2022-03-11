@@ -173,7 +173,9 @@ class StudentSubjectsEnrolled(View):
          'student': student,
          'school_name': constants.SCHOOL_NAME,
       }
+      print(student.subject.all())
       return render(request, self.template_name, context)
+   
    
 class StudentTimetable(View):
    template_name = 'student/timetable.html'
