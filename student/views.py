@@ -6,7 +6,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from curriculum.models import Class, Curriculum, Resource, Subject
 from .forms import StudentForm
-from .models import Student
+from .models import RegistrationDeadline, Student
 from LMS import constants
 from django.views.generic.edit import FormView
 from django.contrib import messages
@@ -124,12 +124,14 @@ class StudentSubjectRegistration(View):
       curriculums = Curriculum.objects.filter(status=True)
       subjects = Subject.objects.all()
       classes = Class.objects.all()
+      registration_deadlines = RegistrationDeadline.objects.all()
       context = {
          'student': student,
          'school_name': constants.SCHOOL_NAME,
          'curriculums': curriculums,
          'subjects': subjects,
          'classes': classes,
+         'registration_deadlines': registration_deadlines,
       }
       return render(request, self.template_name, context)
    

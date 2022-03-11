@@ -68,10 +68,11 @@
                                                                         <div class="col-lg-12 col-md-12 col-sm-12">
                                                                             <div class="card">
                                                                                 <div class="header">
+                                                                                    {% for deadline in registration_deadlines %}
+                                                                                    <h5 class="text-center">Registration Deadline : {% if deadline.class_name_id == class.id %} <strong> {{ deadline.deadline }}</strong> {% endif %} </h5> {% endfor %}
                                                                                     <h2><strong>SUBJECTS</strong> AVAILABLE</h2>
                                                                                 </div>
                                                                                 <div class="body">
-                                                                                    <br>
                                                                                     <div class="table-responsive">
                                                                                         <form action="{% url 'student_register_subject' %}" method="POST">
                                                                                             {% csrf_token %}
@@ -90,7 +91,6 @@
                                                                                                         <td>{{ forloop.counter }}</td>
                                                                                                         <td>{{subject.name}}</td>
                                                                                                         <td>{{ subject.code }}</td>
-                                                                                                        <td>{{ form.subject }}</td>
                                                                                                         <td><input type="checkbox" name="subject" class="subject-select" value="{{ subject.id }}"></td>
                                                                                                     </tr>
                                                                                                     {% endif %} {% endfor %}

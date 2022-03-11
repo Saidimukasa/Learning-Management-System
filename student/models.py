@@ -1,6 +1,6 @@
 from django.db import models
 from account.models import Account
-from curriculum.models import Subject
+from curriculum.models import Class, Subject
 
 class Student(models.Model):
    username = models.CharField(max_length=50, unique=True)
@@ -28,5 +28,13 @@ class Result(models.Model):
 
    def __str__(self):
       return self.student.name + ' ' + self.subject
+   
+class RegistrationDeadline(models.Model):
+   class_name = models.ForeignKey(Class,on_delete=models.CASCADE)
+   deadline = models.DateField()
+   status = models.BooleanField(default=True)
+   
+   def __str__(self):
+      return self.class_name.name
 
 
