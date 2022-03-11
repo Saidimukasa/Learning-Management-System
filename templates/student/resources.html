@@ -35,24 +35,22 @@
                                                 <th>Name</th>
                                                 <th data-breakpoints="xs">Subject</th>
                                                 <th data-breakpoints="xs sm md">Last Modified</th>
-                                                <th data-breakpoints="xs">File size</th>
                                                 <th data-breakpoints="xs">Download</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-
+                                            {% for resource in resources %}
                                             <tr>
-                                                <td><span><i class="zmdi zmdi-collection-pdf w25 text-blush"></i> asdf  hhkj.pdf</span></td>
-                                                <td><span class="owner">Me</span></td>
-                                                <td><span class="date">Mar 10, 2022</span></td>
-                                                <td><span class="size">1MB</span></td>
+                                                <td><span><i class="zmdi zmdi-collection-pdf w25 text-blush"></i> {{ resource.name }}</span></td>
+                                                <td><span class="owner">{{ resource.subject.name }}</span></td>
+                                                <td><span class="date">{{ resource.date_edited }}</span></td>
                                                 <td>
-                                                    <a href="{{ static_url }}/student/resources/download/{{ file_name }}" class="btn btn-icon btn-xs waves-effect waves-light btn-success">
+                                                    <a href="{{ resource.file.url }}" target="_blank" class="btn btn-icon btn-xs waves-effect waves-light btn-success">
                                                         <i class="zmdi zmdi-download"></i>
                                                     </a>
                                                 </td>
                                             </tr>
-
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>

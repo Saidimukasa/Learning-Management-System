@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from curriculum.models import Class, Curriculum, Subject
+from curriculum.models import Class, Curriculum, Resource, Subject
 from .forms import StudentForm
 from .models import Student
 from LMS import constants
@@ -133,10 +133,18 @@ class StudentResources(View):
       user_id = request.user.id
       student_id = getLogedInStudentId(user_id)
       student = Student.objects.get(id=student_id)
+      resources = Resource.objects.all()
+      user = request.user
+      
+      # this_resource = Resource.objects.filter(subject__in=student_subject_resources)
       context = {
          'student': student,
          'school_name': constants.SCHOOL_NAME,
+         'user': user,
+         'resources': resources,
       }
+      print(resources)
+      # print(this_resource)
       return render(request, self.template_name, context)
    
 
