@@ -69,6 +69,7 @@ class Assignment(models.Model):
    file = models.FileField(upload_to='assignments/', blank=True, null=True)
    date_created = models.DateTimeField(auto_now_add=True)
    date_due = models.DateTimeField()
+   returned = models.BooleanField(default=False)
    status = models.BooleanField(default=True)
    
    

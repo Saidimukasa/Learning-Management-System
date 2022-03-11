@@ -1,4 +1,7 @@
-﻿{% extends 'includes/student_base.html' %} {% load static %} {% block content %}
+﻿{% extends 'includes/student_base.html' %} {% load static %} {% block head %}
+<meta name="description" content="Learning Management System">
+<title>{{ school_name }} | Student :: Assignments </title>
+{% endblock %} {% block content %}
 <!-- Main Content -->
 <section class="content">
     <div class="body_scroll">
@@ -28,40 +31,23 @@
                                     <tr>
                                         <th>#</th>
                                         <td>Assignment Title</td>
+                                        <td>Subject</td>
                                         <th>Status</th>
                                         <th>Open Date</th>
                                         <th>Due Date</th>
-
-
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {% for assignment in assignments %}
                                     <tr>
-                                        <td>01</td>
-                                        <td><strong><a href="{% url 'student_assignment_detail' %}">CAT 2</a></strong></td>
+                                        <td>{{ forloop.counter }}</td>
+                                        <td><strong><a href="{% url 'student_assignment_detail' assignment.id %}">{{ assignment.name }}</a></strong></td>
+                                        <td>{{ assignment.subject }}</td>
                                         <td>Not started</td>
-                                        <td><a href="javascript:void(0);">March 6, 2022 10:10 AM</a></td>
-                                        <td><a href="javascript:void(0);">March 25, 2022 10:10 AM</a></td>
-
+                                        <td><a href="javascript:void(0);">{{ assignment.date_created }}</a></td>
+                                        <td><a href="javascript:void(0);">{{ assignment.date_due }}</a></td>
                                     </tr>
-
-                                    <tr>
-                                        <td>02</td>
-                                        <td><strong><a href="javascript:void(0);">CAT 2</a></strong></td>
-                                        <td>Submitted</td>
-                                        <td><a href="javascript:void(0);">March 6, 2022 10:10 AM</a></td>
-                                        <td><a href="javascript:void(0);">March 25, 2022 10:10 AM</a></td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>03</td>
-                                        <td><strong><a href="javascript:void(0);">CAT 2</a></strong></td>
-                                        <td>Not started</td>
-                                        <td><a href="javascript:void(0);">March 6, 2022 10:10 AM</a></td>
-                                        <td><a href="javascript:void(0);">March 25, 2022 10:10 AM</a></td>
-
-                                    </tr>
-
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
