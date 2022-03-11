@@ -11,6 +11,7 @@ urlpatterns = [
     path('calendar/',views.StudentCalendar.as_view(),name='student_calendar'),
     path('resources/',views.StudentResources.as_view(),name='student_resources'),
     path('subject-registration/',views.StudentSubjectRegistration.as_view(),name='student_subject_registration'),
+    path('subject-registration/register/',views.student_register_subject,name='student_register_subject'),
     path('subjects-enrolled',views.StudentSubjectsEnrolled.as_view(),name='student_subjects_enrolled'),
     path('timetable/',views.StudentTimetable.as_view(),name='student_timetable'),
     path('gradebook/',views.StudentGradebook.as_view(),name='student_gradebook'),
@@ -21,4 +22,5 @@ urlpatterns = [
     path('results/',views.StudentResults.as_view(),name='student_results'),
     path('fees',views.StudentFees.as_view(),name='student_fees'),
     path('announcements/',views.StudentAnnouncements.as_view(),name='student_announcements'),
+    
 ]

@@ -1,3 +1,4 @@
+from calendar import c
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
@@ -58,43 +59,7 @@ def student_edit_profile(request):
    else:
       form = StudentForm(instance = request.user.student)
    return render(request, template_name, {'form': form})
-
-# class StudentEditProfile(FormView):
-#    template_name = 'student/profile-edit.html'
-#    form_class = StudentForm
-#    success_url = reverse_lazy('student:student_profile')
-   
-#    def form_valid(self, form):
-#       user_id = self.request.user.id
-#       student_id = getLogedInStudentId(user_id)
-#       student = Student.objects.get(id=student_id)
-#       student.first_name = form.cleaned_data['first_name']
-#       student.last_name = form.cleaned_data['last_name']
-#       # student.email = form.cleaned_data['email']
-#       student.contact_no = form.cleaned_data['contact_no']
-#       student.save()
-#       return super(StudentEditProfile, self).form_valid(form)
-   
-   
-   # @method_decorator(login_required, 'signin')
-   # def get(self, request):
-   #    user_id = request.user.id
-   #    student_id = getLogedInStudentId(user_id)
-   #    student = Student.objects.get(id=student_id)
-   #    school_name = constants.SCHOOL_NAME
-   #    if request.method == 'POST':
-   #       form = StudentForm(request.POST, instance = Student.objects.get(id=student_id))
-   #       if form.is_valid():
-   #          form.save()
-   #          return redirect('student_profile')
-   #       else:
-   #          print(form.errors)
-   #    else:
-   #       form = StudentForm()
-   #    return render(request, self.template_name, {'form': form, 'school_name': school_name, 'student': student})
-         
-      
-   
+ 
    
 class ChatRoom(View):
    template_name = 'student/chat.html'
@@ -168,6 +133,33 @@ class StudentSubjectRegistration(View):
       }
       return render(request, self.template_name, context)
    
+def student_class(request, id):
+   template_name = 'student/class.html'
+   get_class = Class.objects.get(id=id)
+   context = {'class': get_class}
+   
+   return render(request, template_name, context)
+
+def student_register_subject(request):
+   if request.method == 'POST':
+      user_id = request.user.id
+      subjects = request.POST.get('subjects_selected')
+      print(subjects)
+      subjects = str(subjects)
+      reg_subjects = subjects.rstrip(',').split(',')
+      print("Reg SUbjects >>>>>>>> ", reg_subjects)
+      student_id = getLogedInStudentId(user_id)
+      student = Student.objects.get(id=student_id)
+      print(student)
+      for i in reg_subjects:
+         student.subject.add(i)
+         student.save()
+      sweetify.success(request, 'Success', text='Subjects registered successfully')
+      return redirect('student_subject_registration')
+   
+         
+      
+
 
 class StudentSubjectsEnrolled(View):
    template_name = 'student/subjects-enrolled.html'

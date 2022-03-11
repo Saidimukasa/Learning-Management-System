@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="{% static 'assets/plugins/morrisjs/morris.min.css' %}" />
     <!-- Custom Css -->
     <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}">
+     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
+     <!-- Jquery Core Js -->
+    <script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script>
 </head>
 
 
@@ -304,8 +308,7 @@
 
     {% block content %} {% endblock %}
 
-    <!-- Jquery Core Js -->
-    <script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script>
+    
     <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
     <script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script>
     <!-- slimscroll, waves Scripts Plugin Js -->

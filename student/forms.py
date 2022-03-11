@@ -1,3 +1,4 @@
+from tkinter import Widget
 from django import forms
 from django.db.models import fields
 from .models import Student
@@ -13,4 +14,7 @@ class StudentForm(forms.ModelForm):
       for visible in self.visible_fields():
          visible.field.widget.attrs['class'] = 'form-control'
          visible.field.widget.attrs['placeholder'] = visible.field.label
+         
+         
+
          
