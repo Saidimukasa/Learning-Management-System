@@ -4,6 +4,7 @@ from django.shortcuts import HttpResponseRedirect
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.views import View
+from LMS.constants import SCHOOL_NAME
 from account.models import Account
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import logout
@@ -14,7 +15,8 @@ from django.contrib.auth import update_session_auth_hash
 
 def signin(request):
     if request.method == 'GET':
-        return render(request, 'login.html')
+      school_name = SCHOOL_NAME
+      return render(request, 'login.html', {'school_name': school_name})
     else:
         email_ = request.POST.get("email")
         password_ = request.POST.get("password")
