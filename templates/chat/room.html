@@ -274,7 +274,7 @@
     }
 
     function loadMessage() {
-        fetch("{% url 'chat:history' chatgroup.id %}")
+        fetch("{% url 'history' chatgroup.id %}")
             .then(response => response.json())
             .then(data => {
                 for (let msg of data) {

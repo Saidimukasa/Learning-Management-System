@@ -203,8 +203,12 @@
                     <a href="{% url 'student_profile' %}"><i class="zmdi zmdi-account"></i><span>  Profile</span></a>
                 </li>
 
-                <li class="{% active_link 'student_chat' 'active open' strict=True %}">
-                    <a href="{% url 'student_chat' %}"><i class="zmdi zmdi-comments"></i><span>Chat Room</span></a>
+                 <li class="{% active_link 'student_fees' 'active open' strict=True %}">
+                    <a href="{% url 'student_fees' %}"><i class="zmdi zmdi-balance"></i><span>Fees</span></a>
+                </li>
+
+                <li class="{% active_link 'room' 'active open' strict=True  %}">
+                    <a href="{% url 'room' 1 %}"><i class="zmdi zmdi-comments"></i><span>Chat Room</span></a>
                 </li>
 
                 <li class="{% active_link 'student_calendar' 'active open' strict=True %}">
@@ -227,10 +231,6 @@
                     <a href="{% url 'student_timetable' %}"><i class="zmdi zmdi-apps"></i><span>Time Table</span></a>
                 </li>
 
-                <li class="{% active_link 'student_gradebook' 'active open' strict=True %}">
-                    <a href="{% url 'student_gradebook' %}"><i class="zmdi zmdi-collection-plus"></i><span>Grade Book</span></a>
-                </li>
-
                 <li class="{% active_link 'student_assignments' 'active open' strict=True %}">
                     <a href="{% url 'student_assignments' %}"><i class="zmdi zmdi-assignment-alert"></i><span>Assignments</span></a>
                 </li>
@@ -243,8 +243,8 @@
                     <a href="{% url 'student_results' %}"><i class="zmdi zmdi-menu"></i><span>Results</span></a>
                 </li>
 
-                <li class="{% active_link 'student_fees' 'active open' strict=True %}">
-                    <a href="{% url 'student_fees' %}"><i class="zmdi zmdi-balance"></i><span>Fees</span></a>
+                <li class="{% active_link 'student_gradebook' 'active open' strict=True %}">
+                    <a href="{% url 'student_gradebook' %}"><i class="zmdi zmdi-collection-plus"></i><span>Grade Book</span></a>
                 </li>
 
                 <li class="{% active_link 'student_announcements' 'active open' strict=True %}">

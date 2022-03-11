@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from curriculum.models import Class, Curriculum, Resource, Subject
+from curriculum.models import Class, Curriculum, Resource, StudentAnnouncement, Subject
 from .forms import StudentForm
 from .models import RegistrationDeadline, Student
 from LMS import constants
@@ -235,21 +235,8 @@ class StudentAssignmentDetail(View):
       }
       return render(request, self.template_name, context)
 
-class StudentExamDetail(View):
-   template_name = 'student/exam-details.html'
-   
-   @method_decorator(login_required, 'signin')
-   def get(self, request):
-      user_id = request.user.id
-      student_id = getLogedInStudentId(user_id)
-      student = Student.objects.get(id=student_id)
-      context = {
-         'student': student,
-         'school_name': constants.SCHOOL_NAME,
-      }
-      return render(request, self.template_name, context)
-   
-   
+ 
+
 class StudentExams(View):
    template_name = 'student/exams.html'
    
@@ -264,7 +251,20 @@ class StudentExams(View):
       }
       return render(request, self.template_name, context)
    
-
+class StudentExamDetail(View):
+   template_name = 'student/exam-details.html'
+   
+   @method_decorator(login_required, 'signin')
+   def get(self, request):
+      user_id = request.user.id
+      student_id = getLogedInStudentId(user_id)
+      student = Student.objects.get(id=student_id)
+      context = {
+         'student': student,
+         'school_name': constants.SCHOOL_NAME,
+      }
+      return render(request, self.template_name, context)
+   
 class StudentResults(View):
    template_name = 'student/results.html'
    
@@ -301,8 +301,10 @@ class StudentAnnouncements(View):
       user_id = request.user.id
       student_id = getLogedInStudentId(user_id)
       student = Student.objects.get(id=student_id)
+      announcements = StudentAnnouncement.objects.filter(status = True)
       context = {
          'student': student,
          'school_name': constants.SCHOOL_NAME,
+         'announcements': announcements,
       }
       return render(request, self.template_name, context)

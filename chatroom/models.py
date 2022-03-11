@@ -11,4 +11,4 @@ class ChatGroup(Group):
 
     def get_absolute_url(self):
         from django.urls import reverse
-        return reverse('chat:room', args=[str(self.id)])
+        return reverse('room', args=[str(self.id)])

@@ -38,41 +38,29 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {% for announcement in announcements %}
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td><p class="waves-effect"data-toggle="modal" data-target="#announcementModal">Holiday next week</p></td>
-                                        <td>Student</td>
-                                        <td>04/02/2022</td>
-
+                                        <th scope="row">{{ forloop.counter }}</th>
+                                        <td>
+                                            <p class="waves-effect text-primary" data-toggle="modal" data-target="#announcementModal{{ announcement.id }}">{{ announcement.title }}</p>
+                                        </td>
+                                        <td>{{ announcement.target }}</td>
+                                        <td>{{ announcement.date_created }}</td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td> <a href="#">Holiday next week</a> </td>
-                                        <td>Student</td>
-                                        <td>04/02/2022</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td> <a href="#">Holiday next week</a> </td>
-                                        <td>Student</td>
-                                        <td>04/02/2022</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td> <a href="#">Holiday next week</a> </td>
-                                        <td>Student</td>
-                                        <td>04/02/2022</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td> <a href="#">Holiday next week</a> </td>
-                                        <td>Student</td>
-                                        <td>04/02/2022</td>
-
-                                    </tr>
+                                    <div class="modal fade" id="announcementModal{{ announcement.id }}" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="title" id="defaultModalLabel">{{ announcement.title }}</h4>
+                                                </div>
+                                                <div class="modal-body"> {{ announcement.detail }} </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
@@ -83,23 +71,6 @@
     </div>
 </section>
 
-<div class="modal fade" id="announcementModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="title" id="defaultModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales orci ante, sed ornare eros vestibulum ut. Ut accumsan
-                vitae eros sit amet tristique. Nullam scelerisque nunc enim, non dignissim nibh faucibus ullamcorper.
-                Fusce pulvinar libero vel ligula iaculis ullamcorper. Integer dapibus, mi ac tempor varius, purus
-                nibh mattis erat, vitae porta nunc nisi non tellus. Vivamus mollis ante non massa egestas fringilla.
-                Vestibulum egestas consectetur nunc at ultricies. Morbi quis consectetur nunc. </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-round waves-effect">SAVE CHANGES</button>
-                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">CLOSE</button>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 {% endblock %}
