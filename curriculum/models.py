@@ -97,3 +97,14 @@ class TeacherAnnouncement(models.Model):
    
    def __str__(self):
       return self.title
+   
+class Exam(models.Model):
+   subject = models.ForeignKey(Subject,on_delete=models.CASCADE)
+   exam_date = models.DateTimeField()
+   duration = models.IntegerField(default=0)
+   date_created = models.DateTimeField(auto_now_add=True)
+   status = models.BooleanField(default=True)
+   teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
+   
+   def __str__(self):
+      return self.subject
