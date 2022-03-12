@@ -1,1 +1,3 @@
 SCHOOL_NAME = 'Cloud Apex'
+
+CLASS_DURATION = 2
