@@ -37,21 +37,19 @@
                                             <td>Notice</td>
                                             <td>Release Date</td>
                                             <th>Status</th>
-                                           
+
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+
                                         <tr>
                                             <td>1</td>
                                             <td><strong><a href="#">Here is todays message.</a></strong></td>
                                             <td>17th July, 2022</td>
                                             <td>Active</td>
-                                            
-                                           
                                         </tr>
-                                        
-                                        
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -67,14 +65,12 @@
                         <div class="body">
                             <div class="list-group">
                                 {% for subject in student.subject.all %}
-                                <a href="javascript:void(0);" class="list-group-item">{{ subject.name }}</a>
-                                
-                                {% endfor %}
+                                <a href="javascript:void(0);" class="list-group-item">{{ subject.name }}</a> {% endfor %}
                             </div>
                         </div>
                     </div>
                 </div>
-               
+
             </div>
 
         </div>

@@ -1,11 +1,14 @@
-﻿{% extends 'includes/student_base.html' %} {% load static %} {% block content %}
+﻿{% extends 'includes/student_base.html' %} {% load static %} {% block head %}
+<meta name="description" content="Learning Management System">
+<title>{{ school_name }} | Student :: Exams </title>
+{% endblock %} {% block content %}
 <!-- Main Content -->
 <section class="content">
     <div class="body_scroll">
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Stater Page</h2>
+                    <h2>Exams</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> {{school_name}}</a></li>
 
@@ -39,46 +42,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {% for exam in exams %}
                                     <tr>
                                         <th scope="row">1</th>
-                                        <td>BIT4578</td>
-                                        <td> <a href="{% url 'student_exam_detail' %}">Introduction to programming</a> </td>
-                                        <td>3</td>
-                                        <td>04/02/2022</td>
-
+                                        <td>{{ exam.subject.code }}</td>
+                                        <td> <a href="{% url 'student_exam_detail' exam.id %}">{{ exam.subject}}</a> </td>
+                                        <td>{{ exam.duration }}</td>
+                                        <td>{{ exam.exam_date }}</td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>BIT4578</td>
-                                        <td> <a href="exam_details.html">Introduction to programming</a> </td>
-                                        <td>3</td>
-                                        <td>04/02/2022</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>BIT4578</td>
-                                        <td> <a href="exam_details.html">Introduction to programming</a> </td>
-                                        <td>3</td>
-                                        <td>04/02/2022</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>BIT4578</td>
-                                        <td> <a href="exam_details.html">Introduction to programming</a> </td>
-                                        <td>3</td>
-                                        <td>04/02/2022</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>BIT4578</td>
-                                        <td> <a href="exam_details.html">Introduction to programming</a> </td>
-                                        <td>3</td>
-                                        <td>04/02/2022</td>
-
-                                    </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>

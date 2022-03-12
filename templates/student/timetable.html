@@ -1,11 +1,14 @@
-﻿{% extends 'includes/student_base.html' %} {% load static %} {% block content %}
+﻿{% extends 'includes/student_base.html' %} {% load static %} {% block head %}
+<meta name="description" content="Learning Management System">
+<title>{{ school_name }} | Student :: Timetable </title>
+{% endblock %} {% block content %}
 <!-- Main Content -->
 <section class="content">
     <div class="body_scroll">
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Stater Page</h2>
+                    <h2>Timetables</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> {{school_name}}</a></li>
 
