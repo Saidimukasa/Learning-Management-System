@@ -125,8 +125,6 @@
                     <div class="row-editor">
                         <div class="editor-container">
                             <div class="editor">
-
-
                             </div>
                         </div>
                     </div>
@@ -161,15 +159,11 @@
         return CKSource.Editor
             .create(element, config)
             .then(editor => {
-
                 return editor;
             })
     });
 
     watchdog.setDestructor(editor => {
-
-
-
         return editor.destroy();
     });
 
@@ -177,12 +171,9 @@
 
     watchdog
         .create(document.querySelector('.editor'), {
-
             licenseKey: '',
-
-
-
         })
+
         .catch(handleError);
 
     function handleError(error) {

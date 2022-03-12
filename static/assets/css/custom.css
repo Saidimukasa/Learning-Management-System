@@ -4,3 +4,7 @@
     border: 1px solid #ee2558 !important;
     color: white !important;
 }
+
+.ck-editor__editable_inline {
+    min-height: 300px !important;
+}
