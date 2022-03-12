@@ -2,6 +2,10 @@
 <meta name="description" content="Learning Management System">
 <title>{{ school_name }} | Student :: Assignment :: {{ assignment.name }} </title>
 {% endblock %} {% block content %}
+
+<!--ck editor-->
+<!-- <link rel="stylesheet" href="{% static 'assets/css/ckstyles.css' %}"> -->
+
 <!-- Main Content -->
 <section class="content">
     <div class="body_scroll">
@@ -14,10 +18,10 @@
 
                         <li class="breadcrumb-item active">{{ assignment.name }}</li>
                     </ul>
-                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button" aria-label="btn-1"><i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
-                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button" aria-label="btn-2"><i class="zmdi zmdi-arrow-right"></i></button>
                 </div>
             </div>
         </div>
@@ -118,13 +122,75 @@
                     </div>
                     <h4>Additional resources for assignment.</h4>
                     </br>
-                    <button class="btn btn-primary">Back to List</button>
-                    </br>
+                    <div class="row-editor">
+                        <div class="editor-container">
+                            <div class="editor">
+
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {% endif %}
+                <div class="p-3 col-12">
+                    <label for="file-upload">Upload Assignment</label>
+                    <input type="file" class="btn btn-primary" aria-label="file upload">
+                </div>
+                <div class="col-md-4 mx-auto">
+                    <button class="btn btn-primary">Submit Assignment</button>
+                </div>
+                <div class="row">
+                    <a href="{% url 'student_assignments' %}" class="btn btn-info-outline">Back to List</a>
+                </div>
+
+                </br>
             </div>
+            {% endif %}
         </div>
     </div>
+    </div>
 </section>
+
+<script src="{% static 'assets/plugins/ckeditor/ckeditor.js' %}"></script>
+
+<script>
+    const watchdog = new CKSource.EditorWatchdog();
+
+    window.watchdog = watchdog;
+
+    watchdog.setCreator((element, config) => {
+        return CKSource.Editor
+            .create(element, config)
+            .then(editor => {
+
+                return editor;
+            })
+    });
+
+    watchdog.setDestructor(editor => {
+
+
+
+        return editor.destroy();
+    });
+
+    watchdog.on('error', handleError);
+
+    watchdog
+        .create(document.querySelector('.editor'), {
+
+            licenseKey: '',
+
+
+
+        })
+        .catch(handleError);
+
+    function handleError(error) {
+        console.error('Oops, something went wrong!');
+        console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
+        console.warn('Build id: m69enl80baeq-9mxk2awbny5s');
+        console.error(error);
+    }
+</script>
 
 {% endblock %}

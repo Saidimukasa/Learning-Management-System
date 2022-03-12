@@ -211,9 +211,9 @@
                     <a href="{% url 'room' 1 %}"><i class="zmdi zmdi-comments"></i><span>Chat Room</span></a>
                 </li>
 
-                <li class="{% active_link 'student_calendar' 'active open' strict=True %}">
+                {% comment %} <li class="{% active_link 'student_calendar' 'active open' strict=True %}">
                     <a href="{% url 'student_calendar' %}"><i class="zmdi zmdi-calendar"></i><span>Calendar</span></a>
-                </li>
+                </li> {% endcomment %}
 
                 <li class="{% active_link 'student_resources' 'active open' strict=True %}">
                     <a href="{% url 'student_resources' %}"><i class="zmdi zmdi-folder"></i><span>Resources</span></a>
