@@ -23,42 +23,58 @@
         </div>
         <div class="container-fluid">
             <div class="row clearfix">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card widget_2 big_icon email">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Message</strong> of the Day</h2>
+                        </div>
                         <div class="body">
-                            <h6>Emails</h6>
-                            <h2>20 <small class="info">of 100</small></h2>
+                            <div class="table-responsive">
+                                <table class="table table-hover c_table theme-color">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <td>Notice</td>
+                                            <td>Release Date</td>
+                                            <th>Status</th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                        <tr>
+                                            <td>1</td>
+                                            <td><strong><a href="#">Here is todays message.</a></strong></td>
+                                            <td>17th July, 2022</td>
+                                            <td>Active</td>
+                                            
+                                           
+                                        </tr>
+                                        
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card widget_2 big_icon storage">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Registered</strong> Subjects</h2>
+                        </div>
                         <div class="body">
-                            <h6 style="z-index: 100 !important; position:relative;"> Assignments</h6>
-                            <h2>12 <small class="info">of 100</small></h2>
-
+                            <div class="list-group">
+                                {% for subject in student.subject.all %}
+                                <a href="javascript:void(0);" class="list-group-item">{{ subject.name }}</a>
+                                
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card widget_2 big_icon documents">
-                        <div class="body">
-                            <h6>Fees</h6>
-                            <h2>39 <small class="info">of 100</small></h2>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="card widget_2 big_icon domains">
-                        <div class="body">
-                            <h6 style="z-index: 100 !important; position:relative;">Announcements</h6>
-                            <h2>8 <small class="info">of 10</small></h2>
-
-                        </div>
-                    </div>
-                </div>
+               
             </div>
 
         </div>
