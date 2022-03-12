@@ -1,0 +1,148 @@
+﻿{% extends 'includes/student_base.html' %} {% load static %} {% block head %}
+<meta name="description" content="Learning Management System">
+<title>{{ school_name }} | Student :: Subject Registration </title>
+{% endblock %} {% block content %}
+<section class="content">
+    <div class="body_scroll">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Subject Registration</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'student_dashboard' %}"><i class="zmdi zmdi-home"></i> {{school_name}}</a></li>
+
+                        <li class="breadcrumb-item active">Subject Registration</li>
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <!-- Example Tab -->
+            <div class="row clearfix">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Available </strong> Education Curriculums</h2>
+
+                        </div>
+                        <div class="body">
+                            <p>You can register subjects based on a curriculum or the subjects you need.</p>
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs p-0 mb-3 nav-tabs-success">
+                                {% for curriculum in curriculums %}
+                                <li class="nav-item"><a class="nav-link {% if forloop.counter %}active{% endif %}" data-toggle="tab" href="#tab_{{forloop.counter}}">{{curriculum.name}} CURRICULUM</a></li>
+                                {% endfor %}
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                {% for curriculum in curriculums %}
+                                <div class="tab-pane {% if forloop.counter is forloop.counter %}active{% endif %}" id="tab_{{forloop.counter}}">
+
+                                    <b><strong>{{curriculum.name}}</strong> Curriculum</b>
+                                    <p>{{ curriculum.description }}</p>
+                                    <br>
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="card">
+                                            <div class="header">
+                                                <h2><strong>CLASSES</strong> AVAILABLE</h2>
+                                            </div>
+                                            <div class="body">
+                                                <br>
+                                                <ul class="nav nav-tabs p-0 mb-3 nav-tabs-success">{% for class in classes %}
+                                                    <li class="nav-item"><a class="nav-link active class-select" data-toggle="modal" data-target="#subjects_modal{{class.id}}" href="#">Class {{class.name}} </a></li>
+                                                    <!-- Subjects Modal -->
+                                                    <div class="modal fade" id="subjects_modal{{class.id}}" tabindex="-1" role="dialog">
+                                                        <div class="modal-dialog modal-lg" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h4 class="modal-title" id="defaultModalLabel">Class {{ class.name }} Subjects</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="row clearfix">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                                                            <div class="card">
+                                                                                <div class="header">
+                                                                                    {% for deadline in registration_deadlines %}
+                                                                                    <h5 class="text-center">Registration Deadline : {% if deadline.class_name_id == class.id %} <strong> {{ deadline.deadline }}</strong> {% endif %} </h5> {% endfor %}
+                                                                                    <h2><strong>SUBJECTS</strong> AVAILABLE</h2>
+                                                                                </div>
+                                                                                <div class="body">
+                                                                                    <div class="table-responsive">
+                                                                                        <form action="{% url 'student_register_subject' %}" method="POST">
+                                                                                            {% csrf_token %}
+                                                                                            <table class="table table-hover c_table theme-color">
+                                                                                                <thead>
+                                                                                                    <tr>
+                                                                                                        <th>#</th>
+                                                                                                        <th>Subject</th>
+                                                                                                        <th>Subject Code</th>
+                                                                                                        <th>Action</th>
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody>
+                                                                                                    {% for subject in subjects %} {% if subject.c_class_id == class.id %}
+                                                                                                    <tr>
+                                                                                                        <td>{{ forloop.counter }}</td>
+                                                                                                        <td>{{subject.name}}</td>
+                                                                                                        <td>{{ subject.code }}</td>
+                                                                                                        <td><input type="checkbox" name="subject" class="subject-select" value="{{ subject.id }}"></td>
+                                                                                                    </tr>
+                                                                                                    {% endif %} {% endfor %}
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                            <input type="text" name="student" value="{{ student.id }}" hidden>
+                                                                                            <input type="text" id="subjects" name="subjects_selected" hidden>
+                                                                                            <div class="col-md-4 mx-auto">
+                                                                                                <button type="submit" class="btn btn-primary waves-effect">Register Selected</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">CLOSE</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function() {
+        $('.subject-select').click(function() {
+            var txt = "";
+            $('.subject-select:checked').each(function() {
+                txt += $(this).val() + ",";
+            });
+            $('#subjects').val(txt);
+        });
+    });
+</script>
+
+{% endblock %}

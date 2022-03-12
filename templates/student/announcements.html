@@ -1,0 +1,79 @@
+﻿{% extends 'includes/student_base.html' %} {% load static %} {% block head %}
+<meta name="description" content="Learning Management System">
+<title>{{ school_name }} | Student :: Announcements </title>
+{% endblock %} {% block content %}
+
+<!-- Main Content -->
+<section class="content">
+    <div class="body_scroll">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Announcements</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> {{ school_name }}</a></li>
+                        <li class="breadcrumb-item active">Announcements</li>
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong>Latest</strong> Announcements</h2>
+
+                    </div>
+                    <div class="body">
+                        <br>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>ANNOUNCEMENT</th>
+                                        <th>TARGET GROUP</th>
+                                        <th>DATE POSTED</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for announcement in announcements %}
+                                    <tr>
+                                        <th scope="row">{{ forloop.counter }}</th>
+                                        <td>
+                                            <p class="waves-effect text-primary" data-toggle="modal" data-target="#announcementModal{{ announcement.id }}">{{ announcement.title }}</p>
+                                        </td>
+                                        <td>{{ announcement.target }}</td>
+                                        <td>{{ announcement.date_created }}</td>
+                                    </tr>
+                                    <div class="modal fade" id="announcementModal{{ announcement.id }}" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="title" id="defaultModalLabel">{{ announcement.title }}</h4>
+                                                </div>
+                                                <div class="modal-body"> {{ announcement.detail }} </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

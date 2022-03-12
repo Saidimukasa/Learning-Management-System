@@ -1,0 +1,196 @@
+{% extends 'includes/student_base.html' %} {% load static %} {% block head %}
+<meta name="description" content="Learning Management System">
+<title>{{ school_name }} | Student :: Assignment :: {{ assignment.name }} </title>
+{% endblock %} {% block content %}
+
+<!--ck editor-->
+<!-- <link rel="stylesheet" href="{% static 'assets/css/ckstyles.css' %}"> -->
+
+<!-- Main Content -->
+<section class="content">
+    <div class="body_scroll">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Assignment</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'student_dashboard' %}"><i class="zmdi zmdi-home"></i> {{school_name}}</a></li>
+
+                        <li class="breadcrumb-item active">{{ assignment.name }}</li>
+                    </ul>
+                    <button class="btn btn-primary btn-icon mobile_menu" type="button" aria-label="btn-1"><i class="zmdi zmdi-sort-amount-desc"></i></button>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button" aria-label="btn-2"><i class="zmdi zmdi-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                {% if assignment.returned %}
+                <div class="col-lg-12">
+                    <p class="text-bold">{{ assignment.name }} - <strong>Returned </strong> </p>
+                    </br>
+
+                    <div class="table-responsive">
+                        <table class="table c_table theme-color">
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Title</p>
+                                    </td>
+                                    <td>
+                                        <p>{{ assignment.name }}</p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <p>Submission Date</p>
+                                    </td>
+                                    <td>
+                                        <p>March 25, 2022 10:10 AM</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Grade</p>
+                                    </td>
+                                    <td>
+                                        <p>23.00 (max 30.00)</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4>Additional resources for assignment.</h4>
+                    </br>
+                    <h4>Submitted Attachments.</h4>
+                    </br>
+                    <h5>Additional instructor's comments about your submission</h5>
+                    </br>
+                    <button class="btn btn-primary">Back to List</button>
+                    </br>
+                </div>
+                {% else %}
+                <div class="col-lg-12">
+                    <p class="text-bold">{{ assignment.name }} - <strong>In Progress </strong> </p>
+                    </br>
+
+                    <div class="table-responsive">
+                        <table class="table c_table theme-color">
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Title</p>
+                                    </td>
+                                    <td>
+                                        <p>{{ assignment.name }}</p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <p>Due Date</p>
+                                    </td>
+                                    <td>
+                                        <p>{{ assignment.date_due }}</p>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    </br>
+                    <p><em>Instructions</em></p>
+                    <div class="p-3" style="border: thin solid black">
+                        <p>The paper must be typed on a computer and comply with the following requirements: Font: Times New Roman, font size 12, and a line spacing of 1.5. Word count: The length of the home assignment should not exceed 1500 words. </p>
+                        <br>
+                        <h6>Criteria for marking assignment (30 points)</h6>
+                        <ul>
+                            <li>Quality of presentation of the substantive issues (15 points): demonstrates an understanding of the topic and knowledge of the assignment</li>
+                            <li>Writing level (10 points): writing is clear, concise, and arguments are logical.</li>
+                            <li>Citations (5 points): appropriate use of relevant sources.</li>
+                        </ul>
+                        <br>
+                        <p class="text-danger text-bold">Rules about cheating and plagiarism.</p>
+                        <p class="text-danger text-bold">When you take facts, thoughts, ideas, viewpoints, and short or long quotations from others and use them in your own work, the sources you have used must be clearly stated. In other words, you must not give the impression that others’
+                            thoughts, ideas, viewpoints, and results are your own if they are not.
+                        </p>
+                    </div>
+                    <h4>Additional resources for assignment.</h4>
+                    </br>
+                    <div class="row-editor">
+                        <div class="editor-container">
+                            <div class="editor">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3 col-12">
+                    <label for="file-upload">Upload Assignment</label>
+                    <input type="file" class="btn btn-primary" aria-label="file upload">
+                </div>
+                <div class="col-md-4 mx-auto">
+                    <button class="btn btn-primary">Submit Assignment</button>
+                </div>
+                <div class="row">
+                    <a href="{% url 'student_assignments' %}" class="btn btn-info-outline">Back to List</a>
+                </div>
+
+                </br>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+</section>
+
+<script src="{% static 'assets/plugins/ckeditor/ckeditor.js' %}"></script>
+
+<script>
+    const watchdog = new CKSource.EditorWatchdog();
+
+    window.watchdog = watchdog;
+
+    watchdog.setCreator((element, config) => {
+        return CKSource.Editor
+            .create(element, config)
+            .then(editor => {
+
+                return editor;
+            })
+    });
+
+    watchdog.setDestructor(editor => {
+
+
+
+        return editor.destroy();
+    });
+
+    watchdog.on('error', handleError);
+
+    watchdog
+        .create(document.querySelector('.editor'), {
+
+            licenseKey: '',
+
+
+
+        })
+        .catch(handleError);
+
+    function handleError(error) {
+        console.error('Oops, something went wrong!');
+        console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
+        console.warn('Build id: m69enl80baeq-9mxk2awbny5s');
+        console.error(error);
+    }
+</script>
+
+{% endblock %}

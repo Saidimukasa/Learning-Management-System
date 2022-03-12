@@ -1,0 +1,26 @@
+<div class="chat_window body">
+    <div class="chat-header">
+        <div class="user">
+            <img src="{{ chatgroup.icon.url }}" alt="avatar" />
+            <div class="chat-about">
+                <div class="chat-with">{{ chatgroup.name|title }}</div>
+                <div class="chat-num-messages">{{ participants }}</div>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="list_btn btn btn-info btn-round float-md-right"><i class="zmdi zmdi-comments"></i></a>
+    </div>
+    <hr>
+    <ul class="chat-history" id="chat-div">
+        <div class="msg-box msg-box--background">
+            <div id="new-message-chat"></div>
+        </div>
+    </ul>
+    <div class="chat-box">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="zmdi zmdi-mail-send"></i></span>
+            </div>
+            <input type="text" id="chat-message-input" class="form-control" placeholder="Enter message here..." required>
+        </div>
+    </div>
+</div>

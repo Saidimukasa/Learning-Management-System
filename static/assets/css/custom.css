@@ -1,0 +1,6 @@
+.nav-item .class-select:hover {
+    background-color: #ee2558 !important;
+    border-radius: 25px;
+    border: 1px solid #ee2558 !important;
+    color: white !important;
+}
