@@ -3,13 +3,14 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from curriculum.models import Assignment, Class, Curriculum, Resource, StudentAnnouncement, Subject
+from curriculum.models import Assignment, Class, Curriculum, Resource, StudentAnnouncement, Subject, TimeTable
 from .forms import StudentForm
 from .models import RegistrationDeadline, Student
 from LMS import constants
 from django.views.generic.edit import FormView
 from django.contrib import messages
 import sweetify
+from datetime import datetime, timedelta
 
 def getLogedInStudentId(user_id):
     s = Student.objects.get(user_id=user_id)
@@ -186,9 +187,11 @@ class StudentTimetable(View):
       user_id = request.user.id
       student_id = getLogedInStudentId(user_id)
       student = Student.objects.get(id=student_id)
+      timetables = TimeTable.objects.all()
       context = {
          'student': student,
          'school_name': constants.SCHOOL_NAME,
+         'timetables': timetables,
       }
       return render(request, self.template_name, context)
 

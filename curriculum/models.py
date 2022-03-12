@@ -12,8 +12,6 @@ DAYS = (
       ('Sunday', 'Sunday'),
 )
    
-   
-   
 class Curriculum(models.Model):
    name = models.CharField(max_length=100)
    description = models.TextField(max_length=500)
@@ -53,13 +51,14 @@ class Resource(models.Model):
    
 class TimeTable(models.Model):
    subject = models.ForeignKey(Subject,on_delete=models.CASCADE)
-   Teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
+   teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
    day = models.CharField(max_length=10,choices=DAYS)
-   time = models.TimeField()
+   start_time = models.TimeField()
+   end_time = models.TimeField()
    link = models.CharField(max_length=100, blank=True, null=True)
    
    def __str__(self):
-      return self.subject_name + ' ' + self.day + ' ' + self.time.strftime("%H:%M")
+      return self.subject.name
 
 
 class Assignment(models.Model):
