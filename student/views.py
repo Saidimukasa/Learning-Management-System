@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from curriculum.models import Assignment, Class, Curriculum, Exam, Resource, StudentAnnouncement, Subject, TimeTable
+from curriculum.models import Assignment, Class, Curriculum, Exam, Question, Resource, StudentAnnouncement, Subject, TimeTable
 from .forms import StudentForm
 from .models import RegistrationDeadline, Student
 from LMS import constants
@@ -282,10 +282,13 @@ def student_exam_detail(request, id):
    student_id = getLogedInStudentId(user_id)
    student = Student.objects.get(id=student_id)
    exam = Exam.objects.get(id=id)
+   print(exam)
+   questions = Question.objects.all().filter(exam_name=exam)
    context = {
       'student': student,
       'school_name': constants.SCHOOL_NAME,
       'exam': exam,
+      'questions': questions,
    }
    return render(request, template_name, context)
 
