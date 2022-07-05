@@ -13,7 +13,7 @@ channels-redis==3.3.1
 constantly==15.1.0
 cryptography==36.0.1
 daphne==3.0.2
-Django==3.2.7
+Django==3.2.14
 django-active-link==0.1.8
 hiredis==2.0.0
 httptools==0.4.0
